@@ -8,10 +8,13 @@
 
 ## Cartel
 
-**Kamouropsie**  
-Vincent Fillion  
+### *Kamouropsie*
+
+**Vincent Fillion**  
 Installation audiovisuelle générative, 2026  
-Projection vidéo, conception logicielle sur mesure, transducteurs sonores.
+<sub>Projection vidéo, conception logicielle sur mesure, transducteurs sonores.</sub>
+
+---
 
 La **palinopsie** (du grec *palin* « répétition » et *opsie* « vue ») est un trouble de la perception visuelle caractérisé par la persistance ou la réapparition anormale des images après la disparition du stimulus.
 
