@@ -270,11 +270,11 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
   <h3>Signal</h3>
   <ul class="plain">
     <li>La vidéo voyage en SDI, du Mac derrière le mur au projecteur, en passant par le plafond. Tout le matériel de signal est fourni par l'artiste.</li>
-    <li>Chaîne : Mac → HDMI 2 pi → convertisseur Blackmagic HDMI → SDI → 3 câbles SDI de 15 m reliés par 2 coupleurs femelle-femelle (45 m, environ 148 pi) → convertisseur Blackmagic SDI → HDMI → HDMI 2 pi → projecteur.</li>
+    <li>Chaîne : Mac → HDMI 2 pi → Blackmagic Mini Converter HDMI to SDI 6G → 3 câbles SDI de 15 m reliés par 2 coupleurs femelle-femelle (45 m, environ 148 pi) → Blackmagic Mini Converter SDI to HDMI 6G → HDMI 2 pi → projecteur.</li>
     <li>Le convertisseur HDMI → SDI reste sur la tablette C, à côté du Mac. Le convertisseur SDI → HDMI est attaché au kit d'accrochage du projecteur, avec une boucle de câble pour qu'aucun connecteur ne porte de poids.</li>
-    <li>Chaque convertisseur doit être alimenté : celui du Mac sur la barre d'alimentation, celui du projecteur sur la même rallonge que le projecteur.</li>
+    <li>Chaque convertisseur a son bloc d'alimentation 12 V : celui du Mac sur la barre d'alimentation, celui du projecteur sur la même rallonge que le projecteur.</li>
     <li>Fixer les deux coupleurs SDI (ruban ou attache) pour qu'ils ne tirent pas sur les connecteurs. Le surplus de câble s'enroule derrière le mur, pas au plafond.</li>
-    <li>Palinopsia en plein écran sur la sortie HDMI, à une résolution acceptée par les convertisseurs.</li>
+    <li>Palinopsia en plein écran sur la sortie HDMI, en 3840 × 2160 à 30 i/s (2160p30) : c'est le maximum du 6G-SDI, et la résolution native du projecteur. À 60 i/s, il faut descendre en 1080p.</li>
   </ul>
 
   <h3>À surveiller</h3>
@@ -298,8 +298,8 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
       <tr><td><strong>Yosoo Health Gear Resonance Speaker 2 po, 25 W</strong></td><td class="num">2</td><td>Son stéréo : font vibrer le gypse comme une membrane.</td><td>Au milieu des travées, à 54 et 60 po du sol, sur les rondelles B.</td><td>Collés au VHB, avec cordelette de sécurité.</td></tr>
       <tr><td><strong>Dayton Audio BST-1 (bass shaker)</strong></td><td class="num">1</td><td>Basses : fait vibrer toute la structure du mur.</td><td>Sur la plaque A, à 28 po du sol.</td><td>4 Ω, 50 W. Vissé directement, sans caoutchouc.</td></tr>
       <tr><td><strong>Barre d'alimentation</strong></td><td class="num">1</td><td>Alimente le Mac, l'ampli et le convertisseur HDMI → SDI.</td><td>Vissée sur le dosseret F, sous la tablette.</td><td>Branchée à la prise au sol du mur de rangement, environ 5 pi derrière.</td></tr>
-      <tr><td><strong>Convertisseur Blackmagic HDMI → SDI</strong></td><td class="num">1</td><td>Envoie l'image du Mac sur la ligne SDI.</td><td>Sur la tablette C, à côté du Mac.</td><td>Relié au Mac par un câble HDMI de 2 pi. Alimenté par la barre d'alimentation.</td></tr>
-      <tr><td><strong>Convertisseur Blackmagic SDI → HDMI</strong></td><td class="num">1</td><td>Ramène le signal en HDMI pour le projecteur.</td><td>Attaché au kit d'accrochage du projecteur.</td><td>Relié au projecteur par un câble HDMI de 2 pi. Alimenté sur la rallonge du projecteur.</td></tr>
+      <tr><td><strong>Blackmagic Mini Converter HDMI to SDI 6G</strong></td><td class="num">1</td><td>Envoie l'image du Mac sur la ligne SDI.</td><td>Sur la tablette C, à côté du Mac.</td><td>Relié au Mac par un câble HDMI de 2 pi. Bloc 12 V branché sur la barre d'alimentation.</td></tr>
+      <tr><td><strong>Blackmagic Mini Converter SDI to HDMI 6G</strong></td><td class="num">1</td><td>Ramène le signal en HDMI pour le projecteur.</td><td>Attaché au kit d'accrochage du projecteur.</td><td>Relié au projecteur par un câble HDMI de 2 pi. Bloc 12 V branché sur la rallonge du projecteur.</td></tr>
       <tr><td><strong>Câbles HDMI 2 pi</strong></td><td class="num">2</td><td>Mac → convertisseur, convertisseur → projecteur.</td><td>Aux deux bouts de la ligne SDI.</td><td></td></tr>
       <tr><td><strong>Câbles SDI 15 m</strong></td><td class="num">3</td><td>Ligne vidéo de 45 m entre les deux convertisseurs.</td><td>Du mur au projecteur, par le plafond.</td><td>Surplus enroulé derrière le mur.</td></tr>
       <tr><td><strong>Coupleurs SDI femelle-femelle</strong></td><td class="num">2</td><td>Relient les trois câbles SDI.</td><td>Sur la ligne SDI.</td><td>À fixer pour qu'ils ne tirent pas sur les connecteurs.</td></tr>
