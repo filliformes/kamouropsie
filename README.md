@@ -20,7 +20,7 @@ La **palinopsie** (du grec *palin* « répétition » et *opsie* « vue ») est 
 
 À l'été 2026, je me promène dans le Kamouraska où j'ai habité. Je retourne sur mes lieux de prédilection et y filme la nature avec mon téléphone. Je revois les mêmes endroits, toujours un peu différents. Je me souviens du touriste que j'ai déjà été, mon premier point de vue dans la région.
 
-Les images restent, mais sont transformées par ma mémoire et mon biais de positivité. Comme beaucoup, je cherche souvent, sans m'en rendre compte, à enjoliver mes souvenirs. Pour les rendre tangibles, je les capture de diverses façons : photos, vidéos, enregistrements. Ces captures temporelles me semblent vraies, mais sont tout de même médiatisées par nos appareils.
+Les images restent, mais sont transformées par ma mémoire et mon biais de positivité. Comme beaucoup, je cherche souvent, sans m'en rendre compte, à enjoliver mes souvenirs. Pour les rendre tangibles, je les capture de diverses façons : photos, vidéos, enregistrements. Ces captures temporelles me semblent vraies, mais sont tout de même médiatisées par mes appareils.
 
 *Kamouropsie* est une autopsie visuelle des moments d'extase face aux moments de doute; un retour sur les choix qu'on fait sans vraiment s'en rendre compte et qui finissent par façonner notre vie; une réflexion sur ce qu'il nous reste des paysages.
 
