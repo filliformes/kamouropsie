@@ -2,7 +2,28 @@
 
 **Fiche de construction en ligne : https://filliformes.github.io/kamouropsie/**
 
-Kamouropsie est une œuvre de Vincent Fillion (Filliformes) pour la grande salle du Centre d'art de Kamouraska : un mur d'exposition qui sonne. Trois transducteurs font vibrer le gypse côté technique pendant qu'une projection circulaire occupe la face publique.
+![Kamouropsie, teaser visuel](teaser.webp)
+
+## Cartel
+
+**Kamouropsie**
+Vincent Fillion
+Installation audiovisuelle générative, 2026
+Projection vidéo, conception logicielle sur mesure, transducteurs sonores.
+
+La **palinopsie** (du grec *palin* « répétition » et *opsie* « vue ») est un trouble de la perception visuelle caractérisé par la persistance ou la réapparition anormale des images après la disparition du stimulus.
+
+À l'été 2026, je me promène dans le Kamouraska où j'ai habité. Je retourne sur mes lieux de prédilection et y filme la nature avec mon téléphone. Je revois les mêmes endroits, toujours un peu différents. Je me souviens du touriste que j'ai déjà été, mon premier point de vue dans la région.
+
+Les images restent, mais sont transformées par ma mémoire et mon biais de positivité. Comme beaucoup, je cherche souvent, sans m'en rendre compte, à enjoliver mes souvenirs. Pour les rendre tangibles, je les capture de diverses façons : photos, vidéos, enregistrements. Ces captures temporelles me semblent vraies, mais sont tout de même médiatisées par nos appareils.
+
+*Kamouropsie* est une autopsie visuelle des moments d'extase face aux moments de doute; un retour sur les choix qu'on fait sans vraiment s'en rendre compte et qui finissent par façonner notre vie; une réflexion sur ce qu'il nous reste des paysages.
+
+L'œuvre est entièrement créée grâce à un logiciel libre développé par l'artiste, [Palinopsia](https://github.com/filliformes/palinopsia).
+
+## À propos de ce dépôt
+
+L'œuvre est présentée dans la grande salle du Centre d'art de Kamouraska : un mur d'exposition qui sonne. Trois transducteurs font vibrer le gypse côté technique pendant qu'une projection circulaire occupe la face publique.
 
 Ce dépôt contient la fiche de construction destinée à l'équipe de montage du Centre d'art.
 
@@ -28,7 +49,8 @@ Ce dépôt contient la fiche de construction destinée à l'équipe de montage d
 ## Fichiers
 
 - `index.html` : la fiche complète (page autonome)
-- `projection.jpg`, `projection-small.jpg` : image d'en-tête
+- `projection.jpg`, `projection-small.jpg` : image d'en-tête de la fiche
+- `teaser.webp` : teaser visuel de l'œuvre
 
 La page est publiée avec GitHub Pages à partir de la branche `main`. Toute modification poussée sur `main` met le site à jour en une ou deux minutes.
 
