@@ -24,7 +24,7 @@ Les images restent, mais sont transformées par ma mémoire et mon biais de posi
 
 *Kamouropsie* est une autopsie visuelle des moments d'extase face aux moments de doute; un retour sur les choix qu'on fait sans vraiment s'en rendre compte et qui finissent par façonner notre vie; une réflexion sur ce qu'il nous reste des paysages.
 
-L'œuvre est entièrement créée grâce à un logiciel libre développé par l'artiste, [Palinopsia](https://github.com/filliformes/palinopsia).
+L'œuvre est entièrement créée grâce à un logiciel libre en cours de développement, [Palinopsia](https://github.com/filliformes/palinopsia).
 
 ## À propos de ce dépôt
 
