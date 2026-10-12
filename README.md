@@ -2,6 +2,8 @@
 
 **Fiche de construction en ligne : https://filliformes.github.io/kamouropsie/**
 
+Œuvre présentée dans le cadre de l'exposition [An In 2026](https://www.collectifanin.com/an-in-iii-1-1) du Collectif An In, du 16 au 24 octobre 2026.
+
 ![Kamouropsie, teaser visuel](teaser.webp)
 
 ## Cartel
