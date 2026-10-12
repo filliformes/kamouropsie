@@ -192,7 +192,7 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
     <div><dt><span class="k">S</span>Convertisseur HDMI → SDI</dt><dd>Blackmagic Mini Converter 6G, sur la tablette C à côté de l'ampli. HDMI 2 pi depuis le Mac. Bloc 12 V sous la tablette, branché sur la barre d'alimentation.</dd></div>
     <div><dt><span class="k">S</span>Ligne SDI (en bleu)</dt><dd>3 câbles de 15 m et 2 coupleurs. Le surplus s'enroule au sol derrière le mur. La ligne monte le long du mur du rangement, suit le plafond et descend par un câble d'acier jusqu'au projecteur.</dd></div>
     <div><dt><span class="k">S</span>Convertisseur SDI → HDMI</dt><dd>Blackmagic Mini Converter 6G, fixé sur le kit d'accrochage. HDMI 2 pi vers le projecteur. Bloc 12 V sur la rallonge.</dd></div>
-    <div><dt><span class="k">R</span>Rallonge du projecteur (en orange)</dt><dd>Environ 60 pi, avec 2 prises au bout, fixées sur le kit : une pour le projecteur, une pour le bloc 12 V du convertisseur SDI → HDMI. Elle suit le même trajet que la ligne SDI. Dans la vue 3D, elle part de la prise du mur du rangement : prise à confirmer avec le Centre d'art.</dd></div>
+    <div><dt><span class="k">R</span>Rallonge du projecteur (en orange)</dt><dd>Environ 40 pi, avec 2 prises au bout, fixées sur le kit : une pour le projecteur, une pour le bloc 12 V du convertisseur SDI → HDMI. Elle part des prises à 9 pi du sol, sur le flanc de la colonne murale côté fenêtres (côté rangement de la colonne), monte au plafond et rejoint le projecteur par un câble d'acier. Les mêmes prises existent sur la colonne d'en face, côté porte de l'escalier.</dd></div>
   </dl>
   <p class="note">Distances, réglages et points à surveiller pour le projecteur : voir l'onglet Projection.</p>
   <p class="note">Gauche et droite sont toujours nommées du point de vue du public. Le canal gauche de l'ampli va donc à l'exciteur qui se trouve à droite quand on travaille derrière le mur.</p>
@@ -372,7 +372,7 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
         <li><input type="checkbox" id="s23"><label for="s23"><span class="q">8 ×</span> serre-câbles 1/8 po et <span class="q">4 ×</span> cosses<small>2 serre-câbles par boucle</small></label></li>
         <li><input type="checkbox" id="s24"><label for="s24"><span class="q">4 ×</span> points d'ancrage au plafond<small>Type selon la structure du plafond, à valider avec le Centre d'art. Plafond à 19'-8" : prévoir nacelle ou échafaudage.</small></label></li>
         <li><input type="checkbox" id="s25"><label for="s25"><span class="q">1 ×</span> câble de sécurité indépendant<small>Du projecteur à un 5e point du plafond</small></label></li>
-        <li><input type="checkbox" id="s27"><label for="s27"><span class="q">1 ×</span> rallonge électrique à 2 prises, environ 60 pi<small>De la prise de la salle au projecteur, par le plafond. Une prise pour le projecteur, une pour le bloc 12 V du convertisseur SDI → HDMI. Câbles vidéo fournis par l'artiste.</small></label></li>
+        <li><input type="checkbox" id="s27"><label for="s27"><span class="q">1 ×</span> rallonge électrique à 2 prises, environ 40 pi<small>Des prises à 9 pi du sol (colonne murale côté fenêtres) au projecteur, par le plafond. Une prise pour le projecteur, une pour le bloc 12 V du convertisseur SDI → HDMI. Câbles vidéo fournis par l'artiste.</small></label></li>
       </ul>
       <h3>Au démontage</h3>
       <ul>
@@ -394,7 +394,7 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
     <li>Visser l'ensemble tablette dans ses deux montants. Sous la tablette : visser la barre d'alimentation sur le dosseret, entre les goussets, et fixer le bloc 15 V au velcro. Poser le tapis, le Mac et l'ampli, et passer leurs cordons par le trou de la tablette.</li>
     <li>Projecteur : poser les 4 ancrages au plafond, à 30 po de part et d'autre de l'axe, centrés à 234 po du mur. Monter le kit sur le projecteur, passer les deux câbles en X, ajuster la hauteur pour que la lentille soit à 96 po du sol, puis ajouter le câble de sécurité.</li>
     <li>Régler le zoom, le décalage vertical et la mise au point pour que le cercle tombe exactement sur le mur. Faire le masque circulaire dans Palinopsia plutôt qu'avec la correction trapézoïdale.</li>
-    <li>Signal vidéo : Mac → HDMI → convertisseur HDMI → SDI sur la tablette, puis la ligne SDI (3 câbles et 2 coupleurs) jusqu'au plafond et au projecteur, puis convertisseur SDI → HDMI → projecteur. Passer la rallonge du projecteur le long de la ligne SDI et fixer ses 2 prises sur le kit : projecteur et bloc 12 V du convertisseur. Brancher le bloc 12 V du convertisseur HDMI → SDI sur la barre d'alimentation. Fixer les coupleurs.</li>
+    <li>Signal vidéo : Mac → HDMI → convertisseur HDMI → SDI sur la tablette, puis la ligne SDI (3 câbles et 2 coupleurs) jusqu'au plafond et au projecteur, puis convertisseur SDI → HDMI → projecteur. Brancher la rallonge du projecteur sur les prises à 9 pi de la colonne murale côté fenêtres, la monter au plafond jusqu'au kit et fixer ses 2 prises sur le kit : projecteur et bloc 12 V du convertisseur. Brancher le bloc 12 V du convertisseur HDMI → SDI sur la barre d'alimentation. Fixer les coupleurs.</li>
     <li>Câbler en fixant les fils tous les 12 po environ, pour éviter qu'ils claquent contre le gypse.</li>
     <li>Tester avec un balayage sinusoïdal lent de 20 Hz à 2 kHz et resserrer ce qui cliquette.</li>
   </ol>
@@ -567,8 +567,10 @@ box(2,1,1.8,0x2C2C2A,-3,100.95,PC-3.1);
 line([[-3,101.5,PC-2.2],[-3.2,101.9,PC-0.9],[-3,101.75,PC+0.1]],dark,0.1);
 line([[-2,101.1,PC-3.6],[-0.2,101.3,PC-4.2],[1.8,101.2,PC-1],[2.4,101.1,PC-0.15]],dark,0.1);
 line([[-3,101.75,PC+1.8],[-4.6,100.8,PC+4.6],[-4.4,98.4,PC+6.6]],dark,0.16);
-// Rallonge : de la prise du mur de rangement au plafond, puis au kit, le long de la ligne SDI
-line([[-42.4,12,RZ0+0.9],[-36.4,13,RZ0+0.9],[-36.4,233.4,RZ0+0.9],[-35.6,233.4,RZ0+4],[-28.6,233.4,PC-31],[-28,233.2,PC-29.4],[-1.6,104.4,PC-0.2],[-3,101.9,PC+2.6]],PWR,0.14);
+// Rallonge : prise à 9 pi sur le flanc de la colonne murale (côté fenêtres), au plafond, puis au kit
+const OZ=164.6,OX=-(RW/2-3);
+[-1,1].forEach(sx=>{box(2.2,4.4,0.5,0xF2F2EE,sx*(RW/2-3),108,OZ+0.1);[106.9,109.1].forEach(y=>box(0.9,0.6,0.15,0x3d3d3a,sx*(RW/2-3),y,OZ-0.2));});
+line([[OX,106.9,OZ-0.3],[OX+0.5,108,OZ-1.4],[OX+3.8,110,OZ-1.4],[OX+3.8,233.4,OZ-1.4],[OX+6,233.4,OZ+2],[-28.6,233.4,PC-31],[-28,233.2,PC-29.4],[-1.6,104.4,PC-0.2],[-3,101.9,PC+2.6]],PWR,0.14);
 const L=[
  ['B','Exciteur gauche (public), h 54 po',[-32,59,-7],'b'],
  ['B','Exciteur droit (public), h 60 po',[32,65,-7],'b'],
@@ -581,7 +583,7 @@ const L=[
  ['S','Convertisseur HDMI → SDI',[-43.5,49,-8],'b'],
  ['S','Surplus SDI enroulé',[-26,4,-28],'b'],
  ['S','Ligne SDI 45 m (3 × 15 m, 2 coupleurs)',[-38,150,RZ0+1],'a'],
- ['R','Rallonge du projecteur',[-36,120,RZ0+1],'a'],
+ ['R','Prises à 9 pi du sol (départ de la rallonge)',[OX+4,116,OZ-2],'a'],
  ['S','Convertisseur SDI → HDMI',[4,104.5,PC+3],'a'],
  ['R','Rallonge 2 prises : projecteur + convertisseur',[-4,108,PC-2],'a'],
  ['','Porte de rangement',[0,92,RZ0+1],'a'],
