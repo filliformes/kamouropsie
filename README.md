@@ -40,6 +40,7 @@ Ce dépôt contient la fiche de construction destinée à l'équipe de montage d
 | Son | 1 bass shaker Dayton Audio BST-1 + 2 exciteurs 2 po, ampli 3 canaux 30 W |
 | Image | Projecteur laser LG BU50NST, cercle Ø 96 po, lentille à 228 po du mur et à 96 po du sol |
 | Lecture | Mac Mini M2 avec Palinopsia (image) et le son, sur une tablette derrière le mur |
+| Signal vidéo | Ligne SDI de 45 m (3 × 15 m) entre deux convertisseurs Blackmagic HDMI ↔ SDI |
 | Salle | 24'-5" × 39'-10", plafond 19'-8" |
 
 ## Contenu de la fiche

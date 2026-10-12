@@ -269,9 +269,12 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
 
   <h3>Signal</h3>
   <ul class="plain">
-    <li>HDMI à fibre optique de 75 pi, du Mac derrière le mur au projecteur, en passant par le plafond.</li>
-    <li>Un câble HDMI à fibre est orienté : l'extrémité marquée « source » va au Mac.</li>
-    <li>Palinopsia en plein écran sur la sortie HDMI, à la résolution native du projecteur.</li>
+    <li>La vidéo voyage en SDI, du Mac derrière le mur au projecteur, en passant par le plafond. Tout le matériel de signal est fourni par l'artiste.</li>
+    <li>Chaîne : Mac → HDMI 2 pi → convertisseur Blackmagic HDMI → SDI → 3 câbles SDI de 15 m reliés par 2 coupleurs femelle-femelle (45 m, environ 148 pi) → convertisseur Blackmagic SDI → HDMI → HDMI 2 pi → projecteur.</li>
+    <li>Le convertisseur HDMI → SDI reste sur la tablette C, à côté du Mac. Le convertisseur SDI → HDMI est attaché au kit d'accrochage du projecteur, avec une boucle de câble pour qu'aucun connecteur ne porte de poids.</li>
+    <li>Chaque convertisseur doit être alimenté : celui du Mac sur la barre d'alimentation, celui du projecteur sur la même rallonge que le projecteur.</li>
+    <li>Fixer les deux coupleurs SDI (ruban ou attache) pour qu'ils ne tirent pas sur les connecteurs. Le surplus de câble s'enroule derrière le mur, pas au plafond.</li>
+    <li>Palinopsia en plein écran sur la sortie HDMI, à une résolution acceptée par les convertisseurs.</li>
   </ul>
 
   <h3>À surveiller</h3>
@@ -289,12 +292,17 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
   <table>
     <thead><tr><th>Élément</th><th>Qté</th><th>Rôle</th><th>Emplacement</th><th>Notes</th></tr></thead>
     <tbody>
-      <tr><td><strong>Mac Mini M2 (2023)</strong></td><td class="num">1</td><td>Fait jouer Palinopsia (image) et le son.</td><td>Sur la tablette C, derrière le mur.</td><td>Sortie casque 3,5 mm vers l'ampli, HDMI vers le projecteur. Alimentation intégrée : un seul cordon secteur.</td></tr>
+      <tr><td><strong>Mac Mini M2 (2023)</strong></td><td class="num">1</td><td>Fait jouer Palinopsia (image) et le son.</td><td>Sur la tablette C, derrière le mur.</td><td>Sortie casque 3,5 mm vers l'ampli, HDMI vers le convertisseur HDMI → SDI. Alimentation intégrée : un seul cordon secteur.</td></tr>
       <tr><td><strong>Amplificateur 3 canaux 30 W</strong></td><td class="num">1</td><td>Alimente les trois transducteurs.</td><td>Sur la tablette C, à côté du Mac.</td><td>Avec son bloc 15 V 4 A, fixé sous la tablette. Gauche → exciteur gauche (public), droite → exciteur droit, basse → BST-1.</td></tr>
       <tr><td><strong>Projecteur LG BU50NST</strong></td><td class="num">1</td><td>Projection circulaire Ø 96 po.</td><td>Suspendu au centre de la salle, lentille à 228 po du mur et à 96 po du sol.</td><td>Détails dans l'onglet Projection.</td></tr>
       <tr><td><strong>Yosoo Health Gear Resonance Speaker 2 po, 25 W</strong></td><td class="num">2</td><td>Son stéréo : font vibrer le gypse comme une membrane.</td><td>Au milieu des travées, à 54 et 60 po du sol, sur les rondelles B.</td><td>Collés au VHB, avec cordelette de sécurité.</td></tr>
       <tr><td><strong>Dayton Audio BST-1 (bass shaker)</strong></td><td class="num">1</td><td>Basses : fait vibrer toute la structure du mur.</td><td>Sur la plaque A, à 28 po du sol.</td><td>4 Ω, 50 W. Vissé directement, sans caoutchouc.</td></tr>
-      <tr><td><strong>Barre d'alimentation</strong></td><td class="num">1</td><td>Alimente le Mac et l'ampli.</td><td>Vissée sur le dosseret F, sous la tablette.</td><td>Branchée à la prise au sol du mur de rangement, environ 5 pi derrière.</td></tr>
+      <tr><td><strong>Barre d'alimentation</strong></td><td class="num">1</td><td>Alimente le Mac, l'ampli et le convertisseur HDMI → SDI.</td><td>Vissée sur le dosseret F, sous la tablette.</td><td>Branchée à la prise au sol du mur de rangement, environ 5 pi derrière.</td></tr>
+      <tr><td><strong>Convertisseur Blackmagic HDMI → SDI</strong></td><td class="num">1</td><td>Envoie l'image du Mac sur la ligne SDI.</td><td>Sur la tablette C, à côté du Mac.</td><td>Relié au Mac par un câble HDMI de 2 pi. Alimenté par la barre d'alimentation.</td></tr>
+      <tr><td><strong>Convertisseur Blackmagic SDI → HDMI</strong></td><td class="num">1</td><td>Ramène le signal en HDMI pour le projecteur.</td><td>Attaché au kit d'accrochage du projecteur.</td><td>Relié au projecteur par un câble HDMI de 2 pi. Alimenté sur la rallonge du projecteur.</td></tr>
+      <tr><td><strong>Câbles HDMI 2 pi</strong></td><td class="num">2</td><td>Mac → convertisseur, convertisseur → projecteur.</td><td>Aux deux bouts de la ligne SDI.</td><td></td></tr>
+      <tr><td><strong>Câbles SDI 15 m</strong></td><td class="num">3</td><td>Ligne vidéo de 45 m entre les deux convertisseurs.</td><td>Du mur au projecteur, par le plafond.</td><td>Surplus enroulé derrière le mur.</td></tr>
+      <tr><td><strong>Coupleurs SDI femelle-femelle</strong></td><td class="num">2</td><td>Relient les trois câbles SDI.</td><td>Sur la ligne SDI.</td><td>À fixer pour qu'ils ne tirent pas sur les connecteurs.</td></tr>
       </tbody>
   </table>
   </div>
@@ -358,8 +366,7 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
         <li><input type="checkbox" id="s23"><label for="s23"><span class="q">8 ×</span> serre-câbles 1/8 po et <span class="q">4 ×</span> cosses<small>2 serre-câbles par boucle</small></label></li>
         <li><input type="checkbox" id="s24"><label for="s24"><span class="q">4 ×</span> points d'ancrage au plafond<small>Type selon la structure du plafond, à valider avec le Centre d'art. Plafond à 19'-8" : prévoir nacelle ou échafaudage.</small></label></li>
         <li><input type="checkbox" id="s25"><label for="s25"><span class="q">1 ×</span> câble de sécurité indépendant<small>Du projecteur à un 5e point du plafond</small></label></li>
-        <li><input type="checkbox" id="s26"><label for="s26"><span class="q">1 ×</span> câble HDMI à fibre optique, 75 pi<small>Du Mac derrière le mur jusqu'au projecteur, en passant par le plafond</small></label></li>
-        <li><input type="checkbox" id="s27"><label for="s27">Rallonge électrique pour le projecteur</label></li>
+        <li><input type="checkbox" id="s27"><label for="s27">Rallonge électrique pour le projecteur<small>Avec au moins 2 prises : projecteur et convertisseur SDI → HDMI. Câbles vidéo fournis par l'artiste.</small></label></li>
       </ul>
       <h3>Au démontage</h3>
       <ul>
@@ -381,6 +388,7 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
     <li>Visser l'ensemble tablette dans ses deux montants. Sous la tablette : visser la barre d'alimentation sur le dosseret, entre les goussets, et fixer le bloc 15 V au velcro. Poser le tapis, le Mac et l'ampli, et passer leurs cordons par le trou de la tablette.</li>
     <li>Projecteur : poser les 4 ancrages au plafond, à 30 po de part et d'autre de l'axe, centrés à 234 po du mur. Monter le kit sur le projecteur, passer les deux câbles en X, ajuster la hauteur pour que la lentille soit à 96 po du sol, puis ajouter le câble de sécurité.</li>
     <li>Régler le zoom, le décalage vertical et la mise au point pour que le cercle tombe exactement sur le mur. Faire le masque circulaire dans Palinopsia plutôt qu'avec la correction trapézoïdale.</li>
+    <li>Signal vidéo : Mac → HDMI → convertisseur HDMI → SDI sur la tablette, puis la ligne SDI (3 câbles et 2 coupleurs) jusqu'au plafond et au projecteur, puis convertisseur SDI → HDMI → projecteur. Alimenter les deux convertisseurs et fixer les coupleurs.</li>
     <li>Câbler en fixant les fils tous les 12 po environ, pour éviter qu'ils claquent contre le gypse.</li>
     <li>Tester avec un balayage sinusoïdal lent de 20 Hz à 2 kHz et resserrer ce qui cliquette.</li>
   </ol>
