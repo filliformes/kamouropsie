@@ -87,6 +87,11 @@ ol.steps li{margin-bottom:10px;padding-left:4px}
 ol.steps li::marker{font-family:var(--f-mono);font-weight:500;color:var(--accent)}
 ol.steps strong,ul.plain strong,.note strong{color:var(--ink);font-weight:700}
 #montage h3{margin-top:32px;color:var(--ink)}
+.ck{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.ck input{margin-top:5px;flex-shrink:0;accent-color:var(--accent);width:16px;height:16px;cursor:pointer}
+.ck input:checked + span{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+.ck input:checked + span strong{color:var(--muted)}
+.prog{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:12px;font-family:var(--f-mono);font-size:14px;color:var(--muted)}
 h3 + .legend{margin-top:10px}
 #vue h3{margin-top:32px}
 .chain{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
@@ -472,63 +477,64 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
 
 <section class="tab" id="montage" role="tabpanel" aria-labelledby="t-montage" hidden>
   <h2>Ordre de montage</h2>
-  <p>Les étapes suivent l'ordre du chantier. Les valeurs en gras sont à respecter.</p>
+  <p>Les étapes suivent l'ordre du chantier. Les valeurs en gras sont à respecter. Cochez au fur et à mesure : les cases restent cochées dans votre navigateur seulement.</p>
+  <div class="prog"><span id="mprog" aria-live="polite"></span><button class="btn" id="mreset" type="button">Tout décocher</button></div>
 
   <h3>1 · En atelier</h3>
   <ol class="steps">
-    <li><strong>Couper les pièces A à F</strong> dans le contreplaqué, percer et fraiser. Écrire la lettre au crayon sur chaque pièce.</li>
-    <li><strong>Assembler la tablette</strong> : dosseret F, goussets D et tablette C, avec colle et vis #8 × 1-1/2 po. Ajouter le rebord E.</li>
+    <li><label class="ck"><input type="checkbox" id="m1"><span><strong>Couper les pièces A à F</strong> dans le contreplaqué, percer et fraiser. Écrire la lettre au crayon sur chaque pièce.</span></label></li>
+    <li><label class="ck"><input type="checkbox" id="m2"><span><strong>Assembler la tablette</strong> : dosseret F, goussets D et tablette C, avec colle et vis #8 × 1-1/2 po. Ajouter le rebord E.</span></label></li>
   </ol>
 
   <h3>2 · Le mur</h3>
   <ol class="steps" start="3">
-    <li><strong>Placer le mur</strong> : face technique à <strong>5 pi</strong> du mur du rangement, centré dans la largeur de la salle (<strong>74-1/2 po</strong> de chaque côté), face publique vers l'entrée.</li>
-    <li><strong>Repérer les montants</strong> au détecteur ou par les vis du gypse, et tracer leurs axes au crayon.</li>
+    <li><label class="ck"><input type="checkbox" id="m3"><span><strong>Placer le mur</strong> : face technique à <strong>5 pi</strong> du mur du rangement, centré dans la largeur de la salle (<strong>74-1/2 po</strong> de chaque côté), face publique vers l'entrée.</span></label></li>
+    <li><label class="ck"><input type="checkbox" id="m4"><span><strong>Repérer les montants</strong> au détecteur ou par les vis du gypse, et tracer leurs axes au crayon.</span></label></li>
   </ol>
 
   <h3>3 · Transducteurs</h3>
   <ol class="steps" start="5">
-    <li><strong>Bass shaker</strong> : visser la plaque A dans ses deux montants, puis le BST-1 sur la plaque, <strong>sans caoutchouc</strong> entre les deux.</li>
-    <li><strong>Rondelles B</strong> : dégraisser le mur et les rondelles, coller au VHB et presser fort 30 secondes. Idéalement, <strong>attendre 24 h</strong> avant de coller les exciteurs.</li>
-    <li><strong>Exciteurs</strong> : les coller sur les rondelles, gauche à <strong>54 po</strong> et droit à <strong>60 po</strong> du sol (vu du public). Poser les vis à œil et attacher les cordelettes de sécurité.</li>
+    <li><label class="ck"><input type="checkbox" id="m5"><span><strong>Bass shaker</strong> : visser la plaque A dans ses deux montants, puis le BST-1 sur la plaque, <strong>sans caoutchouc</strong> entre les deux.</span></label></li>
+    <li><label class="ck"><input type="checkbox" id="m6"><span><strong>Rondelles B</strong> : dégraisser le mur et les rondelles, coller au VHB et presser fort 30 secondes. Idéalement, <strong>attendre 24 h</strong> avant de coller les exciteurs.</span></label></li>
+    <li><label class="ck"><input type="checkbox" id="m7"><span><strong>Exciteurs</strong> : les coller sur les rondelles, gauche à <strong>54 po</strong> et droit à <strong>60 po</strong> du sol (vu du public). Poser les vis à œil et attacher les cordelettes de sécurité.</span></label></li>
   </ol>
 
   <h3>4 · Tablette et électronique</h3>
   <ol class="steps" start="8">
-    <li><strong>Tablette</strong> : visser l'ensemble dans ses deux montants, dessus à <strong>36 po</strong> du sol.</li>
-    <li><strong>Sous la tablette</strong> : visser la barre d'alimentation sur le dosseret, entre les goussets, et fixer le bloc 15 V de l'ampli au velcro.</li>
-    <li><strong>Sur la tablette</strong> : poser le tapis, puis le Mac, l'ampli et le convertisseur HDMI-SDI. Poser le routeur sur le Mac. Passer les cordons par le trou de la tablette.</li>
-    <li><strong>Branchements</strong> : Mac → ampli (mini-jack), Mac → convertisseur (HDMI), Mac → routeur (Ethernet). Sur la barre : Mac, ampli, convertisseur, routeur et chargeur de l'iPhone.</li>
-    <li><strong>Haut-parleurs</strong> : câbler l'ampli vers les transducteurs en fixant les fils tous les <strong>12 po</strong>, pour qu'ils ne claquent pas contre le gypse. Canal gauche → exciteur <strong>gauche vu du public</strong>, qui est à droite quand on travaille derrière le mur.</li>
+    <li><label class="ck"><input type="checkbox" id="m8"><span><strong>Tablette</strong> : visser l'ensemble dans ses deux montants, dessus à <strong>36 po</strong> du sol.</span></label></li>
+    <li><label class="ck"><input type="checkbox" id="m9"><span><strong>Sous la tablette</strong> : visser la barre d'alimentation sur le dosseret, entre les goussets, et fixer le bloc 15 V de l'ampli au velcro.</span></label></li>
+    <li><label class="ck"><input type="checkbox" id="m10"><span><strong>Sur la tablette</strong> : poser le tapis, puis le Mac, l'ampli et le convertisseur HDMI-SDI. Poser le routeur sur le Mac. Passer les cordons par le trou de la tablette.</span></label></li>
+    <li><label class="ck"><input type="checkbox" id="m11"><span><strong>Branchements</strong> : Mac → ampli (mini-jack), Mac → convertisseur (HDMI), Mac → routeur (Ethernet). Sur la barre : Mac, ampli, convertisseur, routeur et chargeur de l'iPhone.</span></label></li>
+    <li><label class="ck"><input type="checkbox" id="m12"><span><strong>Haut-parleurs</strong> : câbler l'ampli vers les transducteurs en fixant les fils tous les <strong>12 po</strong>, pour qu'ils ne claquent pas contre le gypse. Canal gauche → exciteur <strong>gauche vu du public</strong>, qui est à droite quand on travaille derrière le mur.</span></label></li>
   </ol>
 
   <h3>5 · Projecteur</h3>
   <ol class="steps" start="13">
-    <li><strong>Ancrages</strong> : poser les 4 ancrages au plafond, à <strong>30 po</strong> de part et d'autre de l'axe, centrés à <strong>234 po</strong> du mur.</li>
-    <li><strong>Suspension</strong> : monter le kit sur le projecteur, passer les deux câbles en X et régler la hauteur pour que la lentille soit à <strong>96 po</strong> du sol. Ajouter le câble de sécurité.</li>
-    <li><strong>Rallonge</strong> : la brancher sur les prises à <strong>9 pi</strong> de la colonne murale côté fenêtres, la monter au plafond jusqu'au kit et y fixer ses 2 prises.</li>
+    <li><label class="ck"><input type="checkbox" id="m13"><span><strong>Ancrages</strong> : poser les 4 ancrages au plafond, à <strong>30 po</strong> de part et d'autre de l'axe, centrés à <strong>234 po</strong> du mur.</span></label></li>
+    <li><label class="ck"><input type="checkbox" id="m14"><span><strong>Suspension</strong> : monter le kit sur le projecteur, passer les deux câbles en X et régler la hauteur pour que la lentille soit à <strong>96 po</strong> du sol. Ajouter le câble de sécurité.</span></label></li>
+    <li><label class="ck"><input type="checkbox" id="m15"><span><strong>Rallonge</strong> : la brancher sur les prises à <strong>9 pi</strong> de la colonne murale côté fenêtres, la monter au plafond jusqu'au kit et y fixer ses 2 prises.</span></label></li>
   </ol>
 
   <h3>6 · Signal vidéo</h3>
   <ol class="steps" start="16">
-    <li><strong>Au projecteur</strong> : fixer le convertisseur SDI-HDMI sur le kit, le relier au projecteur en HDMI et brancher son bloc 12 V sur la rallonge.</li>
-    <li><strong>Tirer la ligne SDI</strong> en partant du projecteur : le long du câble d'acier côté coin, au plafond, dans le coin à droite de l'œuvre (vu du public), puis au pied du mur jusqu'à la tablette.</li>
-    <li><strong>Surplus et coupleurs</strong> : enrouler le surplus derrière le mur. Fixer les 2 coupleurs; le second tombe dans le coin, vers 6 pi du sol.</li>
-    <li><strong>Réglage de l'image</strong> : Palinopsia en plein écran, en <strong>2160p30</strong>. Régler zoom, décalage vertical et mise au point pour que le cercle tombe exactement sur le mur. <strong>Pas de correction trapézoïdale.</strong></li>
+    <li><label class="ck"><input type="checkbox" id="m16"><span><strong>Au projecteur</strong> : fixer le convertisseur SDI-HDMI sur le kit, le relier au projecteur en HDMI et brancher son bloc 12 V sur la rallonge.</span></label></li>
+    <li><label class="ck"><input type="checkbox" id="m17"><span><strong>Tirer la ligne SDI</strong> en partant du projecteur : le long du câble d'acier côté coin, au plafond, dans le coin à droite de l'œuvre (vu du public), puis au pied du mur jusqu'à la tablette.</span></label></li>
+    <li><label class="ck"><input type="checkbox" id="m18"><span><strong>Surplus et coupleurs</strong> : enrouler le surplus derrière le mur. Fixer les 2 coupleurs; le second tombe dans le coin, vers 6 pi du sol.</span></label></li>
+    <li><label class="ck"><input type="checkbox" id="m19"><span><strong>Réglage de l'image</strong> : Palinopsia en plein écran, en <strong>2160p30</strong>. Régler zoom, décalage vertical et mise au point pour que le cercle tombe exactement sur le mur. <strong>Pas de correction trapézoïdale.</strong></span></label></li>
   </ol>
 
   <h3>7 · Caméra NDI</h3>
   <ol class="steps" start="20">
-    <li><strong>Pied de micro</strong> (fourni par An In) : le placer juste derrière le bout gauche du mur (vu du public), pattes vers l'arrière, et visser le support au sommet.</li>
-    <li><strong>iPhone</strong> : nettoyer l'écran, le poser sur les ventouses à <strong>60 po</strong> du sol, caméra arrière vers la salle, et l'attacher au pied avec la cordelette.</li>
-    <li><strong>Câble Lightning</strong> : le long du pied, puis au sol derrière le mur jusqu'au chargeur sur la barre. Le coller au ruban gaffer.</li>
-    <li><strong>Réglages</strong> : verrouillage automatique à « Jamais », application NDI en Accès guidé. Vérifier que l'image arrive dans Palinopsia.</li>
+    <li><label class="ck"><input type="checkbox" id="m20"><span><strong>Pied de micro</strong> (fourni par An In) : le placer juste derrière le bout gauche du mur (vu du public), pattes vers l'arrière, et visser le support au sommet.</span></label></li>
+    <li><label class="ck"><input type="checkbox" id="m21"><span><strong>iPhone</strong> : nettoyer l'écran, le poser sur les ventouses à <strong>60 po</strong> du sol, caméra arrière vers la salle, et l'attacher au pied avec la cordelette.</span></label></li>
+    <li><label class="ck"><input type="checkbox" id="m22"><span><strong>Câble Lightning</strong> : le long du pied, puis au sol derrière le mur jusqu'au chargeur sur la barre. Le coller au ruban gaffer.</span></label></li>
+    <li><label class="ck"><input type="checkbox" id="m23"><span><strong>Réglages</strong> : verrouillage automatique à « Jamais », application NDI en Accès guidé. Vérifier que l'image arrive dans Palinopsia.</span></label></li>
   </ol>
 
   <h3>8 · Tests</h3>
   <ol class="steps" start="24">
-    <li><strong>Son</strong> : balayage sinusoïdal lent de <strong>20 Hz à 2 kHz</strong>. Resserrer tout ce qui cliquette.</li>
-    <li><strong>Ensemble</strong> : laisser tourner l'œuvre une heure, puis vérifier l'image, le son et la caméra.</li>
+    <li><label class="ck"><input type="checkbox" id="m24"><span><strong>Son</strong> : balayage sinusoïdal lent de <strong>20 Hz à 2 kHz</strong>. Resserrer tout ce qui cliquette.</span></label></li>
+    <li><label class="ck"><input type="checkbox" id="m25"><span><strong>Ensemble</strong> : laisser tourner l'œuvre une heure, puis vérifier l'image, le son et la caméra.</span></label></li>
   </ol>
 </section>
 
@@ -585,10 +591,14 @@ if(['vue','projection','signal','artiste','pieces','achats','montage','materiaux
 else{try{start=localStorage.getItem('k-tab')||'vue';}catch(e){}}
 if(!document.getElementById(start))start='vue';
 show(start);
-document.querySelectorAll('.shop input').forEach(cb=>{
+const mcb=[...document.querySelectorAll('#montage .ck input')],mprog=document.getElementById('mprog');
+function prog(){const d=mcb.filter(c=>c.checked).length;mprog.textContent=d+' / '+mcb.length+' étapes faites';}
+document.querySelectorAll('.shop input,#montage .ck input').forEach(cb=>{
   try{cb.checked=localStorage.getItem('k-'+cb.id)==='1';}catch(e){}
-  cb.addEventListener('change',()=>{try{localStorage.setItem('k-'+cb.id,cb.checked?'1':'0');}catch(e){}});
+  cb.addEventListener('change',()=>{try{localStorage.setItem('k-'+cb.id,cb.checked?'1':'0');}catch(e){}prog();});
 });
+document.getElementById('mreset').addEventListener('click',()=>{mcb.forEach(c=>{c.checked=false;try{localStorage.setItem('k-'+c.id,'0');}catch(e){}});prog();});
+prog();
 })();
 
 (function(){
