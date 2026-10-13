@@ -6,7 +6,7 @@
 <style>body{margin:0;font:14px system-ui,sans-serif}[hidden]{display:none!important}img{max-width:100%}</style>
 <title>Kamouropsie</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: fiche d'atelier, en-tête avec la projection, deux onglets (3D, matériaux) sur une colonne de lecture */
 :root{
@@ -82,8 +82,17 @@ td .k{font-size:15px}
 .shop li small{display:block;color:var(--muted);font-size:13px}
 .shop li input:checked + label{color:var(--muted);text-decoration:line-through}
 .q{font-family:var(--f-mono);font-weight:500}
-ol.steps{padding-left:22px;max-width:70ch}
-ol.steps li{margin-bottom:8px}
+ol.steps{padding-left:28px;max-width:70ch;margin:8px 0 0}
+ol.steps li{margin-bottom:10px;padding-left:4px}
+ol.steps li::marker{font-family:var(--f-mono);font-weight:500;color:var(--accent)}
+ol.steps strong,ul.plain strong,.note strong{color:var(--ink);font-weight:700}
+#montage h3{margin-top:32px;color:var(--ink)}
+h3 + .legend{margin-top:10px}
+#vue h3{margin-top:32px}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.chain span{font-family:var(--f-mono);font-size:13px;background:var(--chip);border-radius:6px;padding:4px 10px;white-space:nowrap}
+.chain i{font-style:normal;color:var(--accent);font-weight:600}
+tr.grp td{background:var(--chip);font-size:12px;text-transform:uppercase;letter-spacing:.06em;font-weight:600;color:var(--muted);padding-block:7px}
 .symb{font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;max-width:none}
 .sw{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:middle}
 .sw-wall{border:1.5px solid var(--ink);box-shadow:inset 0 0 0 2px var(--panel),inset 0 0 0 4px var(--ink)}
@@ -127,8 +136,8 @@ ol.steps li{margin-bottom:8px}
 .fig .ft{fill:var(--ink);font-family:var(--f-mono);font-size:6.5px}
 .fig .fn{fill:var(--muted);font-family:var(--f-body);font-size:6.5px}
 .cap{font-size:14px;color:var(--muted);margin-top:8px}
-ul.plain{padding-left:20px;max-width:70ch}
-ul.plain li{margin-bottom:6px}
+ul.plain{padding-left:28px;max-width:70ch}
+ul.plain li{margin-bottom:8px;padding-left:4px}
 footer{margin-top:48px;font-size:13px;color:var(--muted)}
 @media (max-width:520px){header.top{grid-template-columns:1fr}header.top img{width:84px;height:84px}.hint{margin-left:0}}
 </style>
@@ -158,8 +167,9 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
 <nav class="tabs" role="tablist" aria-label="Sections">
   <button role="tab" id="t-vue" aria-controls="vue" aria-selected="true">Vue 3D</button>
   <button role="tab" id="t-projection" aria-controls="projection" aria-selected="false">Projection</button>
+  <button role="tab" id="t-signal" aria-controls="signal" aria-selected="false">Signal et caméra</button>
   <button role="tab" id="t-artiste" aria-controls="artiste" aria-selected="false">Matériel de l'artiste</button>
-  <button role="tab" id="t-pieces" aria-controls="pieces" aria-selected="false">Pièces de bois à préparer</button>
+  <button role="tab" id="t-pieces" aria-controls="pieces" aria-selected="false">Pièces de bois</button>
   <button role="tab" id="t-achats" aria-controls="achats" aria-selected="false">Liste d'achats</button>
   <button role="tab" id="t-montage" aria-controls="montage" aria-selected="false">Ordre de montage</button>
 </nav>
@@ -186,28 +196,32 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
     <span class="hint">Glisser : tourner. Maj + glisser, clic droit ou Mode déplacer : se déplacer. Cliquer un élément de la légende pour le situer.</span>
   </div>
 
+  <h3>Son et tablette, côté technique</h3>
   <dl class="legend">
-    <div data-k="A" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">A</span>Bass shaker BST-1</dt><dd>Sur plaque 24 × 10 po vissée dans 2 montants. Centre à 72 po du bord, 28 po du sol.</dd></div>
-    <div data-k="BL" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">B</span>Exciteur gauche (public)</dt><dd>Au milieu d'une travée, 54 po du sol. Vu de dos, il est à droite.</dd></div>
-    <div data-k="BR" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">B</span>Exciteur droit (public)</dt><dd>Au milieu d'une travée, 60 po du sol. Vu de dos, il est à gauche.</dd></div>
-    <div data-k="CF" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">C-F</span>Tablette Mac + ampli</dt><dd>Dosseret vissé dans 2 montants, dessus à 36 po du sol. Barre d'alimentation 6 prises (5 utilisées) et bloc 15 V de l'ampli dessous.</dd></div>
+    <div data-k="A" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">A</span>Bass shaker BST-1</dt><dd>Sur la plaque A, vissée dans 2 montants. Centré dans la largeur du mur, à 28 po du sol.</dd></div>
+    <div data-k="BL" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">B</span>Exciteur gauche (vu du public)</dt><dd>Au milieu d'une travée, à 54 po du sol. Côté technique, il est à droite.</dd></div>
+    <div data-k="BR" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">B</span>Exciteur droit (vu du public)</dt><dd>Au milieu d'une travée, à 60 po du sol. Côté technique, il est à gauche.</dd></div>
+    <div data-k="CF" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">C-F</span>Tablette du Mac et de l'ampli</dt><dd>Dosseret vissé dans 2 montants, dessus à 36 po du sol. Dessous : barre d'alimentation et bloc 15 V de l'ampli.</dd></div>
   </dl>
+  <h3>Projection</h3>
   <dl class="legend">
-    <div data-k="P" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">P</span>Projecteur LG BU50NST</dt><dd>Lentille à 228 po (19 pi) de la face publique, à 96 po du sol, centrée sur le cercle.</dd></div>
-    <div data-k="PS" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">P</span>Suspension</dt><dd>Kit d'accrochage de projecteur, retenu par deux câbles d'acier croisés en X vers quatre points au plafond.</dd></div>
+    <div data-k="P" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">P</span>Projecteur LG BU50NST</dt><dd>Suspendu au centre de la salle. Lentille à 228 po de la face publique et à 96 po du sol.</dd></div>
+    <div data-k="PS" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">P</span>Suspension</dt><dd>Kit d'accrochage retenu par 2 câbles d'acier croisés en X, vers 4 ancrages au plafond.</dd></div>
   </dl>
+  <h3>Signal vidéo et alimentation du projecteur</h3>
   <dl class="legend">
-    <div data-k="S1" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">S</span>Convertisseur HDMI → SDI</dt><dd>Blackmagic Mini Converter 6G, sur la tablette C à côté de l'ampli. HDMI 2 pi depuis le Mac. Bloc 12 V sous la tablette, branché sur la barre d'alimentation.</dd></div>
-    <div data-k="SL" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">S</span>Ligne SDI (en bleu)</dt><dd>3 câbles de 15 m et 2 coupleurs. Elle longe le pied du mur côté technique jusqu'au coin de la salle à droite de l'œuvre (vu du public), monte dans le coin, traverse le plafond jusqu'à l'ancrage du câble d'acier de ce côté et descend le long de ce câble jusqu'au projecteur. Trajet d'environ 23 m : il reste environ 20 m, enroulés au sol derrière le mur avec le premier coupleur. Le second coupleur tombe dans le coin, vers 6 pi du sol.</dd></div>
-    <div data-k="S2" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">S</span>Convertisseur SDI → HDMI</dt><dd>Blackmagic Mini Converter 6G, fixé sur le kit d'accrochage. HDMI 2 pi vers le projecteur. Bloc 12 V sur la rallonge.</dd></div>
-    <div data-k="R" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">R</span>Rallonge du projecteur (en orange)</dt><dd>Environ 40 pi, avec 2 prises au bout, fixées sur le kit : une pour le projecteur, une pour le bloc 12 V du convertisseur SDI → HDMI. Elle part des prises à 9 pi du sol, sur le flanc de la colonne murale côté fenêtres (côté rangement de la colonne), monte au plafond et rejoint le projecteur par un câble d'acier. Les mêmes prises existent sur la colonne d'en face, côté porte de l'escalier.</dd></div>
+    <div data-k="S1" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">S</span>Convertisseur HDMI → SDI</dt><dd>Sur la tablette, à côté de l'ampli. Reçoit le HDMI du Mac. Bloc 12 V sur la barre d'alimentation.</dd></div>
+    <div data-k="SL" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">S</span>Ligne SDI (en bleu)</dt><dd>3 câbles de 15 m et 2 coupleurs. Pied du mur, coin de la salle à droite de l'œuvre, plafond, puis descente le long d'un câble d'acier. Environ 23 m utilisés, surplus enroulé derrière le mur.</dd></div>
+    <div data-k="S2" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">S</span>Convertisseur SDI → HDMI</dt><dd>Fixé sur le kit d'accrochage, relié au projecteur en HDMI. Bloc 12 V sur la rallonge.</dd></div>
+    <div data-k="R" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">R</span>Rallonge du projecteur (en orange)</dt><dd>Environ 40 pi, 2 prises au bout : projecteur et convertisseur. Part des prises à 9 pi du sol de la colonne murale côté fenêtres, monte au plafond et descend par un câble d'acier.</dd></div>
   </dl>
+  <h3>Caméra NDI</h3>
   <dl class="legend">
-    <div data-k="NC" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">N</span>Caméra NDI (iPhone X)</dt><dd>Tenue par son support à ventouses au sommet d'un pied de micro à 3 pattes fourni par An In, placé juste derrière le bout gauche du mur (vu du public) pour être le moins visible possible : seul l'iPhone dépasse, à 60 po du sol, caméra arrière tournée vers la salle. Pas fixée au mur. Alimentée en tout temps : câble Lightning d'environ 3 m, entièrement derrière le mur, jusqu'à son chargeur USB sur la barre d'alimentation.</dd></div>
-    <div data-k="NR" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">N</span>Routeur TP-Link AX3000</dt><dd>Routeur de voyage (TL-WR3002X, environ 4 × 3,6 × 1,2 po). Crée le réseau local de l'œuvre. Posé sur le Mac Mini, relié au Mac par un câble Ethernet court. Bloc USB-C 5 V 3 A sur la barre d'alimentation.</dd></div>
+    <div data-k="NC" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">N</span>Caméra NDI (iPhone X)</dt><dd>Sur un pied de micro juste derrière le bout gauche du mur (vu du public), à 60 po du sol. Seul l'iPhone dépasse. Câble Lightning d'environ 3 m, entièrement derrière le mur.</dd></div>
+    <div data-k="NR" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">N</span>Routeur TP-Link (TL-WR3002X)</dt><dd>Posé sur le Mac Mini. Relié au Mac par Ethernet; l'iPhone s'y connecte en Wi-Fi. Bloc USB-C sur la barre d'alimentation.</dd></div>
   </dl>
-  <p class="note">Distances, réglages et points à surveiller pour le projecteur : voir l'onglet Projection.</p>
-  <p class="note">Gauche et droite sont toujours nommées du point de vue du public. Le canal gauche de l'ampli va donc à l'exciteur qui se trouve à droite quand on travaille derrière le mur.</p>
+  <p class="note"><strong>Gauche et droite</strong> sont toujours nommées du point de vue du public. Côté technique, c'est inversé : le canal gauche de l'ampli va à l'exciteur qui est à droite quand on travaille derrière le mur.</p>
+  <p class="note">Réglages du projecteur : onglet <strong>Projection</strong>. Trajet des câbles et caméra : onglet <strong>Signal et caméra</strong>.</p>
 </section>
 
 <section class="tab" id="projection" role="tabpanel" aria-labelledby="t-projection" hidden>
@@ -270,47 +284,88 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
 
   <h3>Réglages, dans l'ordre</h3>
   <ol class="steps">
-    <li>Aligner le projecteur sur l'axe du mur, centré, lentille à 228 po de la face publique.</li>
-    <li>Mettre le zoom au plus large.</li>
-    <li>Monter l'image avec le décalage vertical de l'objectif jusqu'à ce que son haut coïncide avec le haut du mur. Finir l'alignement latéral avec le décalage horizontal.</li>
-    <li>Faire la mise au point sur le bord du cercle.</li>
-    <li>Ne pas utiliser la correction trapézoïdale : elle réduit la résolution et déforme le cercle. Le masque circulaire se fait dans Palinopsia.</li>
+    <li><strong>Aligner</strong> le projecteur sur l'axe du mur, centré, lentille à <strong>228 po</strong> de la face publique.</li>
+    <li><strong>Zoom</strong> au plus large.</li>
+    <li><strong>Décalage vertical</strong> de l'objectif : monter l'image jusqu'à ce que son haut touche le haut du mur. Finir l'alignement latéral avec le <strong>décalage horizontal</strong>.</li>
+    <li><strong>Mise au point</strong> sur le bord du cercle.</li>
+    <li><strong>Pas de correction trapézoïdale</strong> : elle réduit la résolution et déforme le cercle. Le masque circulaire se fait dans Palinopsia.</li>
   </ol>
 
   <h3>Suspension</h3>
   <ul class="plain">
-    <li>Kit d'accrochage universel sur le projecteur (21,4 lb).</li>
-    <li>4 ancrages au plafond à 30 po de part et d'autre du centre du projecteur, qui se trouve à environ 234 po du mur. Deux câbles d'acier de 1/8 po, d'environ 25 pi chacun, croisés en X.</li>
-    <li>Un câble de sécurité indépendant vers un 5<sup>e</sup> point.</li>
-    <li>Plafond à 19'-8" : nacelle ou échafaudage. Ancrages à valider avec le Centre d'art.</li>
-  </ul>
-
-  <h3>Signal</h3>
-  <ul class="plain">
-    <li>La vidéo voyage en SDI, du Mac derrière le mur au projecteur. Tout le matériel de signal est fourni par l'artiste.</li>
-    <li>Trajet : pied du mur côté technique, coin de la salle à droite de l'œuvre (vu du public), montée dans le coin, plafond jusqu'à l'ancrage du câble d'acier de ce côté, puis descente le long de ce câble jusqu'au projecteur. Environ 23 m sur les 45 m disponibles.</li>
-    <li>Chaîne : Mac → HDMI 2 pi → Blackmagic Mini Converter HDMI to SDI 6G → 3 câbles SDI de 15 m reliés par 2 coupleurs femelle-femelle (45 m, environ 148 pi) → Blackmagic Mini Converter SDI to HDMI 6G → HDMI 2 pi → projecteur.</li>
-    <li>Le convertisseur HDMI → SDI reste sur la tablette C, à côté du Mac. Le convertisseur SDI → HDMI est attaché au kit d'accrochage du projecteur, avec une boucle de câble pour qu'aucun connecteur ne porte de poids.</li>
-    <li>Chaque convertisseur a son bloc d'alimentation 12 V : celui du Mac sur la barre d'alimentation, celui du projecteur sur la même rallonge que le projecteur.</li>
-    <li>Le surplus (environ 20 m) s'enroule au sol derrière le mur, avec le premier coupleur. En partant du projecteur, le dernier câble de 15 m arrive dans le coin vers 6 pi du sol : c'est là que tombe le second coupleur. Fixer les deux coupleurs (ruban ou attache) pour qu'ils ne tirent pas sur les connecteurs.</li>
-    <li>Palinopsia en plein écran sur la sortie HDMI, en 3840 × 2160 à 30 i/s (2160p30) : c'est le maximum du 6G-SDI, et la résolution native du projecteur. À 60 i/s, il faut descendre en 1080p.</li>
-  </ul>
-
-  <h3>Caméra NDI (interaction)</h3>
-  <ul class="plain">
-    <li>L'œuvre est interactive : un vieil iPhone X sert de caméra NDI. Son image entre dans Palinopsia et modifie la composition vidéo en temps réel.</li>
-    <li>L'iPhone est tenu par le support de l'artiste, vissé au sommet d'un pied de micro à 3 pattes fourni sur place par An In (la perche n'est pas nécessaire). Pour être le moins visible possible, le pied est placé juste derrière le bout gauche du mur (vu du public) : environ 9 po en retrait de la face publique et 9 po à gauche du bout du mur, pattes tournées vers l'arrière. Seul l'iPhone dépasse, à 60 po du sol, et il voit la salle sans que le mur le gêne. Position et hauteur à ajuster sur place avec l'artiste.</li>
-    <li>Le support se visse sur le filetage au sommet du pied. Ses 4 ventouses tiennent l'iPhone par l'écran : la caméra arrière regarde la salle, l'écran est tourné vers le mur. Nettoyer l'écran à l'alcool avant de poser les ventouses, et attacher l'iPhone au pied avec une cordelette de sécurité au cas où une ventouse lâcherait.</li>
-    <li>Le routeur de voyage TP-Link AX3000, posé sur le Mac Mini derrière le mur, crée un réseau local. L'iPhone s'y connecte en Wi-Fi, le Mac par un câble Ethernet.</li>
-    <li>L'iPhone doit être branché en tout temps. Le câble Lightning descend le pied et rejoint le chargeur USB sur la barre d'alimentation en restant derrière le mur : environ 3 m, donc un câble Lightning de 3 m, ou 2 m avec une rallonge USB. Rien ne passe au sol côté public. Un câble noir sera plus discret.</li>
-    <li>Sur l'iPhone : verrouillage automatique à « Jamais », application NDI au premier plan (Accès guidé), mode avion avec Wi-Fi seul.</li>
+    <li><strong>Kit d'accrochage</strong> universel sur le projecteur (21,4 lb).</li>
+    <li><strong>4 ancrages au plafond</strong>, à 30 po de part et d'autre du centre du projecteur, lui-même à environ 234 po du mur. 2 câbles d'acier de 1/8 po, d'environ 25 pi chacun, croisés en X.</li>
+    <li><strong>Câble de sécurité</strong> indépendant vers un 5<sup>e</sup> point.</li>
+    <li><strong>Accès</strong> : plafond à 19'-8", nacelle ou échafaudage. Ancrages à valider avec le Centre d'art.</li>
+    <li><strong>Alimentation</strong> : rallonge d'environ 40 pi depuis les prises à 9 pi du sol. Détails dans l'onglet Signal et caméra.</li>
   </ul>
 
   <h3>À surveiller</h3>
   <ul class="plain">
-    <li><strong>Ombres du public.</strong> Le bas du faisceau passe à environ 25 po du sol à 5 pi du mur, et à 50 po à 10 pi. Une personne qui se tient devant le mur coupe donc la moitié basse du cercle. À 10 pi, l'ombre d'une personne de 5 pi 6 po couvre environ le tiers inférieur du cercle.</li>
+    <li><strong>Ombres du public.</strong> Le bas du faisceau passe à environ 25 po du sol à 5 pi du mur, et à 50 po à 10 pi. Une personne debout devant le mur coupe donc la moitié basse du cercle. À 10 pi, l'ombre d'une personne de 5 pi 6 po couvre environ le tiers inférieur du cercle.</li>
     <li><strong>Lumière du jour.</strong> Les fenêtres les plus proches du mur, des deux côtés, sont claires. Sans occultation, elles délaveront l'image.</li>
-    <li><strong>Lueur des bandes noires.</strong> Elle tombe sur le mur de la porte de rangement, 5 pi derrière l'œuvre.</li>
+    <li><strong>Lueur des bandes noires.</strong> Elle tombe sur le mur du rangement, 5 pi derrière l'œuvre.</li>
+  </ul>
+</section>
+
+<section class="tab" id="signal" role="tabpanel" aria-labelledby="t-signal" hidden>
+  <h2>Signal et caméra</h2>
+  <p>Le Mac, derrière le mur, envoie l'image au projecteur par une ligne SDI. Il reçoit en Wi-Fi l'image d'une caméra NDI, qui transforme la vidéo en temps réel. Tout ce matériel est fourni par l'artiste.</p>
+
+  <h3>Chaîne vidéo</h3>
+  <div class="chain" role="list" aria-label="Chaîne vidéo, du Mac au projecteur">
+    <span role="listitem">Mac Mini</span><i aria-hidden="true">→</i>
+    <span role="listitem">HDMI 2 pi</span><i aria-hidden="true">→</i>
+    <span role="listitem">Convertisseur HDMI-SDI</span><i aria-hidden="true">→</i>
+    <span role="listitem">3 × SDI 15 m, 2 coupleurs</span><i aria-hidden="true">→</i>
+    <span role="listitem">Convertisseur SDI-HDMI</span><i aria-hidden="true">→</i>
+    <span role="listitem">HDMI 2 pi</span><i aria-hidden="true">→</i>
+    <span role="listitem">Projecteur</span>
+  </div>
+  <dl class="kv">
+    <div><dt>Résolution</dt><dd>3840 × 2160 à 30 i/s (2160p30)</dd></div>
+    <div><dt>Convertisseurs</dt><dd>Blackmagic Mini Converter 6G</dd></div>
+    <div><dt>Ligne SDI</dt><dd>45 m disponibles, environ 23 m utilisés</dd></div>
+    <div><dt>Alimentation</dt><dd>un bloc 12 V par convertisseur</dd></div>
+  </dl>
+
+  <h3>Trajet de la ligne SDI</h3>
+  <ol class="steps">
+    <li><strong>Tablette</strong> : départ au convertisseur HDMI-SDI, à côté du Mac.</li>
+    <li><strong>Pied du mur</strong>, côté technique, jusqu'au bout droit du mur (vu du public).</li>
+    <li><strong>Coin de la salle</strong> à droite de l'œuvre : montée jusqu'au plafond.</li>
+    <li><strong>Plafond</strong>, jusqu'à l'ancrage du câble d'acier de ce côté.</li>
+    <li><strong>Câble d'acier</strong> : descente jusqu'au convertisseur SDI-HDMI, fixé sur le kit d'accrochage. Laisser une boucle pour qu'aucun connecteur ne porte de poids.</li>
+  </ol>
+  <ul class="plain">
+    <li><strong>Surplus</strong> : environ 20 m, enroulés au sol derrière le mur avec le premier coupleur.</li>
+    <li><strong>Second coupleur</strong> : en partant du projecteur, le dernier câble de 15 m arrive dans le coin, vers 6 pi du sol. Fixer les deux coupleurs (ruban ou attache) pour qu'ils ne tirent pas sur les connecteurs.</li>
+    <li><strong>Alimentation des convertisseurs</strong> : HDMI-SDI sur la barre d'alimentation, SDI-HDMI sur la rallonge du projecteur.</li>
+    <li><strong>Sortie du Mac</strong> : Palinopsia en plein écran sur la sortie HDMI, en 2160p30. C'est le maximum du 6G-SDI et la résolution native du projecteur. À 60 i/s, il faut passer en 1080p.</li>
+  </ul>
+
+  <h3>Rallonge du projecteur</h3>
+  <ul class="plain">
+    <li><strong>Départ</strong> : prises à 9 pi du sol, sur le flanc de la colonne murale côté fenêtres (côté rangement de la colonne). La colonne d'en face, côté porte de l'escalier, a les mêmes prises.</li>
+    <li><strong>Trajet</strong> : le long de la colonne jusqu'au plafond, puis jusqu'au kit par un câble d'acier. Environ 40 pi.</li>
+    <li><strong>Au bout</strong> : 2 prises fixées sur le kit, pour le projecteur et le bloc 12 V du convertisseur SDI-HDMI.</li>
+  </ul>
+
+  <h3>Caméra NDI (interaction)</h3>
+  <p>L'œuvre est interactive : un iPhone X sert de caméra NDI. Son image entre dans Palinopsia et transforme la composition vidéo en temps réel.</p>
+  <ul class="plain">
+    <li><strong>Emplacement</strong> : sur un pied de micro à 3 pattes fourni par An In, sans perche, juste derrière le bout gauche du mur (vu du public). Environ 9 po en retrait de la face publique et 9 po à gauche du bout du mur, pattes vers l'arrière. Seul l'iPhone dépasse, à <strong>60 po</strong> du sol. Position et hauteur à ajuster sur place avec l'artiste.</li>
+    <li><strong>Support</strong> : vissé au sommet du pied. Ses 4 ventouses tiennent l'iPhone par l'écran, la caméra arrière tournée vers la salle. Nettoyer l'écran à l'alcool avant de poser les ventouses.</li>
+    <li><strong>Sécurité</strong> : attacher l'iPhone au pied avec une cordelette, au cas où une ventouse lâcherait.</li>
+    <li><strong>Alimentation</strong> : branché en tout temps. Le câble Lightning, environ 3 m, descend le pied et rejoint le chargeur USB sur la barre d'alimentation, entièrement derrière le mur. Un câble noir est plus discret.</li>
+    <li><strong>Réseau</strong> : le routeur TP-Link, posé sur le Mac Mini, crée un réseau local. L'iPhone s'y connecte en Wi-Fi, le Mac par Ethernet.</li>
+    <li><strong>Réglages de l'iPhone</strong> : verrouillage automatique à « Jamais », application NDI au premier plan (Accès guidé), mode avion avec Wi-Fi seul.</li>
+  </ul>
+
+  <h3>À surveiller</h3>
+  <ul class="plain">
+    <li><strong>Ventouses.</strong> Vérifier chaque jour que l'iPhone tient bien sur son support.</li>
+    <li><strong>Image de la caméra.</strong> Si Palinopsia ne la reçoit plus, vérifier que l'iPhone est sur le Wi-Fi du routeur et que l'application NDI est au premier plan.</li>
   </ul>
 </section>
 
@@ -321,25 +376,29 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
   <table>
     <thead><tr><th>Élément</th><th>Qté</th><th>Rôle</th><th>Emplacement</th><th>Notes</th></tr></thead>
     <tbody>
-      <tr><td><strong>Mac Mini M2 (2023)</strong></td><td class="num">1</td><td>Fait jouer Palinopsia (image) et le son.</td><td>Sur la tablette C, derrière le mur.</td><td>Sortie casque 3,5 mm vers l'ampli, HDMI vers le convertisseur HDMI → SDI, Ethernet vers le routeur. Alimentation intégrée : un seul cordon secteur.</td></tr>
-      <tr><td><strong>Amplificateur 3 canaux 30 W</strong></td><td class="num">1</td><td>Alimente les trois transducteurs.</td><td>Sur la tablette C, à côté du Mac.</td><td>Avec son bloc 15 V 4 A, fixé sous la tablette. Gauche → exciteur gauche (public), droite → exciteur droit, basse → BST-1.</td></tr>
-      <tr><td><strong>Projecteur LG BU50NST</strong></td><td class="num">1</td><td>Projection circulaire Ø 96 po.</td><td>Suspendu au centre de la salle, lentille à 228 po du mur et à 96 po du sol.</td><td>Détails dans l'onglet Projection.</td></tr>
-      <tr><td><strong>Yosoo Health Gear Resonance Speaker 2 po, 25 W</strong></td><td class="num">2</td><td>Son stéréo : font vibrer le gypse comme une membrane.</td><td>Au milieu des travées, à 54 et 60 po du sol, sur les rondelles B.</td><td>Collés au VHB, avec cordelette de sécurité.</td></tr>
-      <tr><td><strong>Dayton Audio BST-1 (bass shaker)</strong></td><td class="num">1</td><td>Basses : fait vibrer toute la structure du mur.</td><td>Sur la plaque A, à 28 po du sol.</td><td>4 Ω, 50 W. Vissé directement, sans caoutchouc.</td></tr>
-      <tr><td><strong>Barre d'alimentation</strong></td><td class="num">1</td><td>Alimente le Mac, l'ampli, le convertisseur HDMI → SDI, le routeur et l'iPhone.</td><td>Vissée sur le dosseret F, sous la tablette.</td><td>6 prises : 5 utilisées, 1 libre. Branchée à la prise au sol du mur de rangement, environ 5 pi derrière.</td></tr>
-      <tr><td><strong>Blackmagic Mini Converter HDMI to SDI 6G</strong></td><td class="num">1</td><td>Envoie l'image du Mac sur la ligne SDI.</td><td>Sur la tablette C, à côté du Mac.</td><td>Relié au Mac par un câble HDMI de 2 pi. Bloc 12 V branché sur la barre d'alimentation.</td></tr>
-      <tr><td><strong>Blackmagic Mini Converter SDI to HDMI 6G</strong></td><td class="num">1</td><td>Ramène le signal en HDMI pour le projecteur.</td><td>Attaché au kit d'accrochage du projecteur.</td><td>Relié au projecteur par un câble HDMI de 2 pi. Bloc 12 V branché sur la rallonge du projecteur.</td></tr>
+      <tr class="grp"><td colspan="5">Lecture et son</td></tr>
+      <tr><td><strong>Mac Mini M2 (2023)</strong></td><td class="num">1</td><td>Fait jouer Palinopsia (image) et le son.</td><td>Tablette C, derrière le mur.</td><td>Casque 3,5 mm → ampli, HDMI → convertisseur HDMI-SDI, Ethernet → routeur. Un seul cordon secteur.</td></tr>
+      <tr><td><strong>Amplificateur 3 canaux 30 W</strong></td><td class="num">1</td><td>Alimente les trois transducteurs.</td><td>Tablette C, à côté du Mac.</td><td>Bloc 15 V 4 A fixé sous la tablette. Gauche → exciteur gauche (vu du public), droite → exciteur droit, basse → BST-1.</td></tr>
+      <tr><td><strong>Exciteurs Yosoo Health Gear 2 po, 25 W</strong></td><td class="num">2</td><td>Son stéréo : font vibrer le gypse comme une membrane.</td><td>Sur les rondelles B, à 54 et 60 po du sol.</td><td>Collés au VHB, avec cordelette de sécurité.</td></tr>
+      <tr><td><strong>Bass shaker Dayton Audio BST-1</strong></td><td class="num">1</td><td>Basses : fait vibrer toute la structure du mur.</td><td>Sur la plaque A, à 28 po du sol.</td><td>4 Ω, 50 W. Vissé directement, sans caoutchouc.</td></tr>
+      <tr><td><strong>Barre d'alimentation 6 prises</strong></td><td class="num">1</td><td>Alimente le Mac, l'ampli, le convertisseur HDMI-SDI, le routeur et l'iPhone.</td><td>Sous la tablette, vissée sur le dosseret F.</td><td>5 prises utilisées, 1 libre. Branchée à la prise au sol du mur du rangement, environ 5 pi derrière.</td></tr>
+      <tr class="grp"><td colspan="5">Projection et signal</td></tr>
+      <tr><td><strong>Projecteur LG BU50NST</strong></td><td class="num">1</td><td>Projection circulaire Ø 96 po.</td><td>Suspendu au centre de la salle.</td><td>Lentille à 228 po du mur et à 96 po du sol. Voir l'onglet Projection.</td></tr>
+      <tr><td><strong>Blackmagic Mini Converter HDMI to SDI 6G</strong></td><td class="num">1</td><td>Envoie l'image du Mac sur la ligne SDI.</td><td>Tablette C.</td><td>Bloc 12 V sur la barre d'alimentation.</td></tr>
+      <tr><td><strong>Blackmagic Mini Converter SDI to HDMI 6G</strong></td><td class="num">1</td><td>Ramène le signal en HDMI pour le projecteur.</td><td>Kit d'accrochage du projecteur.</td><td>Bloc 12 V sur la rallonge du projecteur.</td></tr>
       <tr><td><strong>Câbles HDMI 2 pi</strong></td><td class="num">2</td><td>Mac → convertisseur, convertisseur → projecteur.</td><td>Aux deux bouts de la ligne SDI.</td><td></td></tr>
-      <tr><td><strong>Câbles SDI 15 m</strong></td><td class="num">3</td><td>Ligne vidéo de 45 m entre les deux convertisseurs.</td><td>Du mur au projecteur, par le coin de la salle et le plafond.</td><td>Trajet d'environ 23 m. Surplus enroulé derrière le mur.</td></tr>
-      <tr><td><strong>iPhone X (caméra NDI)</strong></td><td class="num">1</td><td>Filme la salle; son image modifie la vidéo en temps réel.</td><td>Sur son support, au sommet d'un pied de micro (fourni par An In), juste derrière le bout gauche du mur (vu du public), environ 60 po du sol.</td><td>Toujours branché. Envoie son image en Wi-Fi au routeur.</td></tr>
-      <tr><td><strong>Support d'iPhone à ventouses</strong></td><td class="num">1</td><td>Tient l'iPhone sur le pied de micro.</td><td>Au sommet du pied de micro fourni par An In.</td><td>Se visse sur le filetage du pied. 4 ventouses sur l'écran, caméra arrière vers la salle.</td></tr>
-      <tr><td><strong>Chargeur USB et câble Lightning</strong></td><td class="num">1</td><td>Alimente l'iPhone en tout temps.</td><td>Chargeur sur la barre d'alimentation.</td><td>Le câble reste derrière le mur. Environ 3 m : Lightning 3 m, ou 2 m et une rallonge USB.</td></tr>
-      <tr><td><strong>Routeur de voyage TP-Link AX3000 (TL-WR3002X)</strong></td><td class="num">1</td><td>Réseau local entre l'iPhone et le Mac.</td><td>Posé sur le Mac Mini, sur la tablette C.</td><td>Environ 4 × 3,6 × 1,2 po. Bloc USB-C 5 V 3 A sur la barre d'alimentation.</td></tr>
-      <tr><td><strong>Câble Ethernet court</strong></td><td class="num">1</td><td>Mac → routeur.</td><td>Sur la tablette C.</td><td></td></tr>
-      <tr><td><strong>Coupleurs SDI femelle-femelle</strong></td><td class="num">2</td><td>Relient les trois câbles SDI.</td><td>Sur la ligne SDI.</td><td>À fixer pour qu'ils ne tirent pas sur les connecteurs.</td></tr>
-      </tbody>
+      <tr><td><strong>Câbles SDI 15 m</strong></td><td class="num">3</td><td>Ligne vidéo entre les deux convertisseurs.</td><td>Pied du mur, coin de la salle et plafond.</td><td>Environ 23 m utilisés, surplus enroulé derrière le mur.</td></tr>
+      <tr><td><strong>Coupleurs SDI femelle-femelle</strong></td><td class="num">2</td><td>Relient les trois câbles SDI.</td><td>Derrière le mur et dans le coin.</td><td>À fixer pour qu'ils ne tirent pas sur les connecteurs.</td></tr>
+      <tr class="grp"><td colspan="5">Caméra NDI</td></tr>
+      <tr><td><strong>iPhone X</strong></td><td class="num">1</td><td>Caméra NDI : son image transforme la vidéo en temps réel.</td><td>Sur le pied de micro, juste derrière le bout gauche du mur.</td><td>À 60 po du sol, caméra arrière vers la salle. Toujours branché.</td></tr>
+      <tr><td><strong>Support d'iPhone à ventouses</strong></td><td class="num">1</td><td>Tient l'iPhone sur le pied de micro.</td><td>Au sommet du pied.</td><td>Se visse sur le filetage du pied.</td></tr>
+      <tr><td><strong>Chargeur USB et câble Lightning</strong></td><td class="num">1</td><td>Alimente l'iPhone en tout temps.</td><td>Chargeur sur la barre d'alimentation.</td><td>Environ 3 m, entièrement derrière le mur : Lightning 3 m, ou 2 m et une rallonge USB.</td></tr>
+      <tr><td><strong>Routeur TP-Link AX3000 (TL-WR3002X)</strong></td><td class="num">1</td><td>Réseau local entre l'iPhone et le Mac.</td><td>Posé sur le Mac Mini.</td><td>Environ 4 × 3,6 × 1,2 po. Bloc USB-C 5 V 3 A sur la barre d'alimentation.</td></tr>
+      <tr><td><strong>Câble Ethernet court</strong></td><td class="num">1</td><td>Relie le Mac au routeur.</td><td>Tablette C.</td><td></td></tr>
+    </tbody>
   </table>
   </div>
+  <p class="note">Fourni sur place par <strong>An In</strong> : le pied de micro à 3 pattes qui porte l'iPhone.</p>
 </section>
 
 <section class="tab" id="pieces" role="tabpanel" aria-labelledby="t-pieces" hidden>
@@ -364,48 +423,48 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
       <h3>Bois et finition</h3>
       <ul>
         <li><input type="checkbox" id="s1"><label for="s1"><span class="q">1 ×</span> contreplaqué 3/4 po, 2 × 4 pi<small>Toutes les pièces, A à F</small></label></li>
-        <li><input type="checkbox" id="s4"><label for="s4">Colle à bois</label></li>
-        <li><input type="checkbox" id="s5"><label for="s5">Clous de finition 1-1/4 po<small>Rebord E</small></label></li>
+        <li><input type="checkbox" id="s4"><label for="s4"><span class="q">1 ×</span> colle à bois<small>Assemblage de la tablette</small></label></li>
+        <li><input type="checkbox" id="s5"><label for="s5"><span class="q">~6 ×</span> clous de finition 1-1/4 po<small>Rebord E</small></label></li>
       </ul>
       <h3>Vis</h3>
       <ul>
         <li><input type="checkbox" id="s6"><label for="s6"><span class="q">10 ×</span> vis à bois #8 × 2-1/2 po, tête fraisée<small>6 pour la plaque A, 4 pour le dosseret F. Environ 1-1/4 po entre dans le montant.</small></label></li>
         <li><input type="checkbox" id="s7"><label for="s7"><span class="q">10 ×</span> vis à bois #8 × 1-1/2 po, tête fraisée<small>Assemblage dosseret, goussets et tablette</small></label></li>
         <li><input type="checkbox" id="s8"><label for="s8"><span class="q">4 ×</span> vis #10 × 3/4 po, tête cylindrique, avec rondelles plates<small>BST-1 sur la plaque. Vérifier le diamètre de ses trous avant l'achat.</small></label></li>
+        <li><input type="checkbox" id="s28"><label for="s28"><span class="q">2 ×</span> vis #6 × 5/8 po, tête ronde<small>Barre d'alimentation sous la tablette</small></label></li>
+      </ul>
+      <h3>Au démontage</h3>
+      <ul>
+        <li><input type="checkbox" id="s20"><label for="s20"><span class="q">1 ×</span> composé à joints et spatule<small>Reboucher les trous de vis</small></label></li>
       </ul>
     </div>
     <div>
       <h3>Adhésif et sécurité</h3>
       <ul>
         <li><input type="checkbox" id="s9"><label for="s9"><span class="q">1 ×</span> ruban 3M VHB 5952, 1 po de large<small>Rondelles au mur et exciteurs sur rondelles. Pleine force après 24 h.</small></label></li>
-        <li><input type="checkbox" id="s10"><label for="s10">Alcool isopropylique et chiffon propre<small>Dégraisser avant de coller</small></label></li>
+        <li><input type="checkbox" id="s10"><label for="s10"><span class="q">1 ×</span> alcool isopropylique et chiffon propre<small>Dégraisser avant le VHB, nettoyer l'écran de l'iPhone avant les ventouses</small></label></li>
         <li><input type="checkbox" id="s11"><label for="s11"><span class="q">2 ×</span> vis à œil #8<small>Dans le montant voisin de chaque exciteur</small></label></li>
-        <li><input type="checkbox" id="s12"><label for="s12"><span class="q">5 pi</span> de cordelette nylon tressé 3 mm<small>Sécurité des exciteurs (3 pi) et de l'iPhone sur son pied (2 pi). Ou câble d'acier gainé 1/16 po avec manchons à sertir.</small></label></li>
+        <li><input type="checkbox" id="s12"><label for="s12"><span class="q">5 pi</span> de cordelette nylon tressé 3 mm<small>Sécurité des exciteurs (3 pi) et de l'iPhone (2 pi). Ou câble d'acier gainé 1/16 po avec manchons à sertir.</small></label></li>
+        <li><input type="checkbox" id="s29"><label for="s29"><span class="q">1 ×</span> velcro industriel adhésif<small>Bloc 15 V de l'ampli sous la tablette</small></label></li>
+        <li><input type="checkbox" id="s32"><label for="s32"><span class="q">1 ×</span> ruban gaffer noir, 2 po<small>Câble Lightning de l'iPhone au sol, derrière le mur</small></label></li>
       </ul>
       <h3>Câblage et électronique</h3>
       <ul>
-        <li><input type="checkbox" id="s13"><label for="s13"><span class="q">25 pi</span> de fil de haut-parleur 16 AWG</label></li>
+        <li><input type="checkbox" id="s13"><label for="s13"><span class="q">25 pi</span> de fil de haut-parleur 16 AWG<small>Ampli vers les trois transducteurs</small></label></li>
         <li><input type="checkbox" id="s14"><label for="s14"><span class="q">1 ×</span> câble mini-jack 3,5 mm mâle-mâle, 3 pi<small>Mac vers ampli</small></label></li>
-        <li><input type="checkbox" id="s15"><label for="s15"><span class="q">~20 ×</span> crampes isolées à clou, petit format<small>Plus fiables que les attaches adhésives avec les vibrations</small></label></li>
-        <li><input type="checkbox" id="s16"><label for="s16">Embouts adaptés au bornier de l'ampli, si nécessaire</label></li>
+        <li><input type="checkbox" id="s16"><label for="s16"><span class="q">au besoin</span> embouts pour le bornier de l'ampli</label></li>
+        <li><input type="checkbox" id="s15"><label for="s15"><span class="q">~20 ×</span> crampes isolées à clou, petit format<small>Fixer les fils tous les 12 po. Plus fiables que les attaches adhésives avec les vibrations.</small></label></li>
         <li><input type="checkbox" id="s17"><label for="s17"><span class="q">1 ×</span> tapis antidérapant en caoutchouc, coupé à 8 × 20 po<small>Isole le Mac des vibrations du mur</small></label></li>
-        <li><input type="checkbox" id="s28"><label for="s28"><span class="q">2 ×</span> vis #6 × 5/8 po, tête ronde<small>Fixation de la barre d'alimentation</small></label></li>
-        <li><input type="checkbox" id="s29"><label for="s29">Velcro industriel adhésif<small>Bloc 15 V sous la tablette</small></label></li>
-        <li><input type="checkbox" id="s32"><label for="s32"><span class="q">1 ×</span> ruban gaffer noir, 2 po<small>Câble Lightning de l'iPhone au sol, derrière le mur</small></label></li>
         <li><input type="checkbox" id="s30"><label for="s30"><span class="q">1 ×</span> passe-câble Ø 1-1/2 po<small>Trou de la tablette C</small></label></li>
       </ul>
       <h3>Projection</h3>
       <ul>
         <li><input type="checkbox" id="s21"><label for="s21"><span class="q">1 ×</span> kit d'accrochage de projecteur universel<small>Capacité supérieure à 21,4 lb, poids du BU50NST</small></label></li>
-        <li><input type="checkbox" id="s22"><label for="s22"><span class="q">2 ×</span> câble d'acier galvanisé 1/8 po, longueur selon la hauteur du plafond<small>Environ 25 pi chacun pour le plafond de 19'-8", avec du surplus pour les boucles</small></label></li>
+        <li><input type="checkbox" id="s22"><label for="s22"><span class="q">2 ×</span> câble d'acier galvanisé 1/8 po, environ 25 pi<small>Pour le plafond de 19'-8", avec du surplus pour les boucles</small></label></li>
         <li><input type="checkbox" id="s23"><label for="s23"><span class="q">8 ×</span> serre-câbles 1/8 po et <span class="q">4 ×</span> cosses<small>2 serre-câbles par boucle</small></label></li>
-        <li><input type="checkbox" id="s24"><label for="s24"><span class="q">4 ×</span> points d'ancrage au plafond<small>Type selon la structure du plafond, à valider avec le Centre d'art. Plafond à 19'-8" : prévoir nacelle ou échafaudage.</small></label></li>
-        <li><input type="checkbox" id="s25"><label for="s25"><span class="q">1 ×</span> câble de sécurité indépendant<small>Du projecteur à un 5e point du plafond</small></label></li>
-        <li><input type="checkbox" id="s27"><label for="s27"><span class="q">1 ×</span> rallonge électrique à 2 prises, environ 40 pi<small>Des prises à 9 pi du sol (colonne murale côté fenêtres) au projecteur, par le plafond. Une prise pour le projecteur, une pour le bloc 12 V du convertisseur SDI → HDMI. Câbles vidéo fournis par l'artiste.</small></label></li>
-      </ul>
-      <h3>Au démontage</h3>
-      <ul>
-        <li><input type="checkbox" id="s20"><label for="s20">Composé à joints et spatule<small>Reboucher les trous de vis</small></label></li>
+        <li><input type="checkbox" id="s24"><label for="s24"><span class="q">4 ×</span> points d'ancrage au plafond<small>Type selon la structure du plafond, à valider avec le Centre d'art</small></label></li>
+        <li><input type="checkbox" id="s25"><label for="s25"><span class="q">1 ×</span> câble de sécurité indépendant<small>Du projecteur à un 5<sup>e</sup> point du plafond</small></label></li>
+        <li><input type="checkbox" id="s27"><label for="s27"><span class="q">1 ×</span> rallonge électrique à 2 prises, environ 40 pi<small>Des prises à 9 pi du sol (colonne murale côté fenêtres) au projecteur, par le plafond. Une prise pour le projecteur, une pour le convertisseur SDI-HDMI.</small></label></li>
       </ul>
     </div>
   </div>
@@ -413,20 +472,63 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
 
 <section class="tab" id="montage" role="tabpanel" aria-labelledby="t-montage" hidden>
   <h2>Ordre de montage</h2>
+  <p>Les étapes suivent l'ordre du chantier. Les valeurs en gras sont à respecter.</p>
+
+  <h3>1 · En atelier</h3>
   <ol class="steps">
-    <li>En atelier : couper les pièces, percer et fraiser. Assembler F, D et C (colle et vis #8 × 1-1/2 po), puis le rebord E.</li>
-    <li>Dans la grande salle : placer le mur avec sa face technique à 5 pi du mur de la porte de rangement, centré dans la largeur (74-1/2 po de chaque côté), face publique vers l'entrée.</li>
-    <li>Sur le mur : repérer les montants au détecteur ou par les vis du gypse, et tracer les axes au crayon.</li>
-    <li>Visser la plaque A dans ses deux montants, puis le BST-1 sur la plaque. Aucun caoutchouc entre les deux.</li>
-    <li>Dégraisser le mur et les rondelles B, coller au VHB, presser fort 30 secondes. Idéalement, attendre 24 h avant de coller les exciteurs.</li>
-    <li>Coller les exciteurs sur les rondelles, poser les vis à œil et attacher les cordelettes de sécurité.</li>
-    <li>Visser l'ensemble tablette dans ses deux montants. Sous la tablette : visser la barre d'alimentation sur le dosseret, entre les goussets, et fixer le bloc 15 V au velcro. Poser le tapis, le Mac et l'ampli, et passer leurs cordons par le trou de la tablette.</li>
-    <li>Projecteur : poser les 4 ancrages au plafond, à 30 po de part et d'autre de l'axe, centrés à 234 po du mur. Monter le kit sur le projecteur, passer les deux câbles en X, ajuster la hauteur pour que la lentille soit à 96 po du sol, puis ajouter le câble de sécurité.</li>
-    <li>Régler le zoom, le décalage vertical et la mise au point pour que le cercle tombe exactement sur le mur. Faire le masque circulaire dans Palinopsia plutôt qu'avec la correction trapézoïdale.</li>
-    <li>Signal vidéo : Mac → HDMI → convertisseur HDMI → SDI sur la tablette, puis la ligne SDI (3 câbles et 2 coupleurs) : pied du mur, coin de la salle à droite de l'œuvre, plafond, puis le long du câble d'acier de ce côté jusqu'au projecteur. Commencer par le projecteur et enrouler le surplus derrière le mur. Au bout, convertisseur SDI → HDMI → projecteur. Brancher la rallonge du projecteur sur les prises à 9 pi de la colonne murale côté fenêtres, la monter au plafond jusqu'au kit et fixer ses 2 prises sur le kit : projecteur et bloc 12 V du convertisseur. Brancher le bloc 12 V du convertisseur HDMI → SDI sur la barre d'alimentation. Fixer les coupleurs.</li>
-    <li>Caméra NDI : poser le routeur sur le Mac Mini, le brancher au Mac (Ethernet) et à la barre d'alimentation. Placer le pied de micro d'An In juste derrière le bout gauche du mur (vu du public), pattes vers l'arrière, et visser le support au sommet. Nettoyer l'écran, poser l'iPhone sur les ventouses à 60 po du sol, caméra arrière vers la salle, et l'attacher au pied avec la cordelette. Passer le câble Lightning le long du pied, puis au sol derrière le mur, jusqu'au chargeur sur la barre, et le coller au ruban gaffer.</li>
-    <li>Câbler en fixant les fils tous les 12 po environ, pour éviter qu'ils claquent contre le gypse.</li>
-    <li>Tester avec un balayage sinusoïdal lent de 20 Hz à 2 kHz et resserrer ce qui cliquette.</li>
+    <li><strong>Couper les pièces A à F</strong> dans le contreplaqué, percer et fraiser. Écrire la lettre au crayon sur chaque pièce.</li>
+    <li><strong>Assembler la tablette</strong> : dosseret F, goussets D et tablette C, avec colle et vis #8 × 1-1/2 po. Ajouter le rebord E.</li>
+  </ol>
+
+  <h3>2 · Le mur</h3>
+  <ol class="steps" start="3">
+    <li><strong>Placer le mur</strong> : face technique à <strong>5 pi</strong> du mur du rangement, centré dans la largeur de la salle (<strong>74-1/2 po</strong> de chaque côté), face publique vers l'entrée.</li>
+    <li><strong>Repérer les montants</strong> au détecteur ou par les vis du gypse, et tracer leurs axes au crayon.</li>
+  </ol>
+
+  <h3>3 · Transducteurs</h3>
+  <ol class="steps" start="5">
+    <li><strong>Bass shaker</strong> : visser la plaque A dans ses deux montants, puis le BST-1 sur la plaque, <strong>sans caoutchouc</strong> entre les deux.</li>
+    <li><strong>Rondelles B</strong> : dégraisser le mur et les rondelles, coller au VHB et presser fort 30 secondes. Idéalement, <strong>attendre 24 h</strong> avant de coller les exciteurs.</li>
+    <li><strong>Exciteurs</strong> : les coller sur les rondelles, gauche à <strong>54 po</strong> et droit à <strong>60 po</strong> du sol (vu du public). Poser les vis à œil et attacher les cordelettes de sécurité.</li>
+  </ol>
+
+  <h3>4 · Tablette et électronique</h3>
+  <ol class="steps" start="8">
+    <li><strong>Tablette</strong> : visser l'ensemble dans ses deux montants, dessus à <strong>36 po</strong> du sol.</li>
+    <li><strong>Sous la tablette</strong> : visser la barre d'alimentation sur le dosseret, entre les goussets, et fixer le bloc 15 V de l'ampli au velcro.</li>
+    <li><strong>Sur la tablette</strong> : poser le tapis, puis le Mac, l'ampli et le convertisseur HDMI-SDI. Poser le routeur sur le Mac. Passer les cordons par le trou de la tablette.</li>
+    <li><strong>Branchements</strong> : Mac → ampli (mini-jack), Mac → convertisseur (HDMI), Mac → routeur (Ethernet). Sur la barre : Mac, ampli, convertisseur, routeur et chargeur de l'iPhone.</li>
+    <li><strong>Haut-parleurs</strong> : câbler l'ampli vers les transducteurs en fixant les fils tous les <strong>12 po</strong>, pour qu'ils ne claquent pas contre le gypse. Canal gauche → exciteur <strong>gauche vu du public</strong>, qui est à droite quand on travaille derrière le mur.</li>
+  </ol>
+
+  <h3>5 · Projecteur</h3>
+  <ol class="steps" start="13">
+    <li><strong>Ancrages</strong> : poser les 4 ancrages au plafond, à <strong>30 po</strong> de part et d'autre de l'axe, centrés à <strong>234 po</strong> du mur.</li>
+    <li><strong>Suspension</strong> : monter le kit sur le projecteur, passer les deux câbles en X et régler la hauteur pour que la lentille soit à <strong>96 po</strong> du sol. Ajouter le câble de sécurité.</li>
+    <li><strong>Rallonge</strong> : la brancher sur les prises à <strong>9 pi</strong> de la colonne murale côté fenêtres, la monter au plafond jusqu'au kit et y fixer ses 2 prises.</li>
+  </ol>
+
+  <h3>6 · Signal vidéo</h3>
+  <ol class="steps" start="16">
+    <li><strong>Au projecteur</strong> : fixer le convertisseur SDI-HDMI sur le kit, le relier au projecteur en HDMI et brancher son bloc 12 V sur la rallonge.</li>
+    <li><strong>Tirer la ligne SDI</strong> en partant du projecteur : le long du câble d'acier côté coin, au plafond, dans le coin à droite de l'œuvre (vu du public), puis au pied du mur jusqu'à la tablette.</li>
+    <li><strong>Surplus et coupleurs</strong> : enrouler le surplus derrière le mur. Fixer les 2 coupleurs; le second tombe dans le coin, vers 6 pi du sol.</li>
+    <li><strong>Réglage de l'image</strong> : Palinopsia en plein écran, en <strong>2160p30</strong>. Régler zoom, décalage vertical et mise au point pour que le cercle tombe exactement sur le mur. <strong>Pas de correction trapézoïdale.</strong></li>
+  </ol>
+
+  <h3>7 · Caméra NDI</h3>
+  <ol class="steps" start="20">
+    <li><strong>Pied de micro</strong> (fourni par An In) : le placer juste derrière le bout gauche du mur (vu du public), pattes vers l'arrière, et visser le support au sommet.</li>
+    <li><strong>iPhone</strong> : nettoyer l'écran, le poser sur les ventouses à <strong>60 po</strong> du sol, caméra arrière vers la salle, et l'attacher au pied avec la cordelette.</li>
+    <li><strong>Câble Lightning</strong> : le long du pied, puis au sol derrière le mur jusqu'au chargeur sur la barre. Le coller au ruban gaffer.</li>
+    <li><strong>Réglages</strong> : verrouillage automatique à « Jamais », application NDI en Accès guidé. Vérifier que l'image arrive dans Palinopsia.</li>
+  </ol>
+
+  <h3>8 · Tests</h3>
+  <ol class="steps" start="24">
+    <li><strong>Son</strong> : balayage sinusoïdal lent de <strong>20 Hz à 2 kHz</strong>. Resserrer tout ce qui cliquette.</li>
+    <li><strong>Ensemble</strong> : laisser tourner l'œuvre une heure, puis vérifier l'image, le son et la caméra.</li>
   </ol>
 </section>
 
@@ -479,7 +581,7 @@ function show(id){
 tabs.forEach(t=>t.addEventListener('click',()=>show(t.getAttribute('aria-controls'))));
 let start='vue';
 const h=location.hash.slice(1);
-if(['vue','projection','artiste','pieces','achats','montage','materiaux'].includes(h))start=(h==='materiaux'?'pieces':h);
+if(['vue','projection','signal','artiste','pieces','achats','montage','materiaux'].includes(h))start=(h==='materiaux'?'pieces':h);
 else{try{start=localStorage.getItem('k-tab')||'vue';}catch(e){}}
 if(!document.getElementById(start))start='vue';
 show(start);

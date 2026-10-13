@@ -46,12 +46,13 @@ Ce dépôt contient la fiche de construction destinée à l'équipe de montage d
 
 ## Contenu de la fiche
 
-- **Vue 3D** interactive du mur, de la salle et du projecteur, avec l'emplacement de chaque pièce
-- **Projection** : coupe de côté, cadre de l'image, réglages dans l'ordre, suspension, signal, points à surveiller
-- **Matériel fourni par l'artiste** : ce qui arrive avec l'œuvre
-- **Pièces de bois à préparer** (A à F), avec dessins cotés
+- **Vue 3D** interactive du mur, de la salle, du projecteur et des câbles. Un clic sur un élément de la légende le cadre et le met en évidence.
+- **Projection** : coupe de côté, cadre de l'image, réglages dans l'ordre, suspension, points à surveiller
+- **Signal et caméra** : chaîne vidéo SDI, trajet des câbles, rallonge du projecteur, caméra NDI
+- **Matériel de l'artiste** : ce qui arrive avec l'œuvre, par groupe
+- **Pièces de bois** à préparer (A à F), avec dessins cotés
 - **Liste d'achats** à cocher (les cases restent cochées dans le navigateur)
-- **Ordre de montage**
+- **Ordre de montage** en 8 phases, valeurs importantes en gras
 
 ## Fichiers
 
