@@ -28,7 +28,7 @@ L'œuvre est entièrement créée grâce à un logiciel libre en cours de dével
 
 ## À propos de ce dépôt
 
-L'œuvre est présentée dans la grande salle du Centre d'art de Kamouraska : un mur d'exposition qui sonne. Trois transducteurs font vibrer le gypse côté technique pendant qu'une projection circulaire occupe la face publique.
+L'œuvre est présentée dans la grande salle du Centre d'art de Kamouraska : un mur d'exposition qui sonne. Trois transducteurs font vibrer le gypse côté technique pendant qu'une projection circulaire occupe la face publique. Une caméra NDI placée à côté du mur capte la salle et transforme l'image en temps réel.
 
 Ce dépôt contient la fiche de construction destinée à l'équipe de montage du Centre d'art.
 
@@ -40,6 +40,7 @@ Ce dépôt contient la fiche de construction destinée à l'équipe de montage d
 | Son | 1 bass shaker Dayton Audio BST-1 + 2 exciteurs 2 po, ampli 3 canaux 30 W |
 | Image | Projecteur laser LG BU50NST, cercle Ø 96 po, lentille à 228 po du mur et à 96 po du sol |
 | Lecture | Mac Mini M2 avec Palinopsia (image) et le son, sur une tablette derrière le mur |
+| Interaction | Caméra NDI (iPhone X) à côté du mur, reliée en Wi-Fi par un routeur TP-Link AX3000 : son image modifie la vidéo en temps réel dans Palinopsia |
 | Signal vidéo | 2160p30 sur une ligne 6G-SDI de 45 m (3 × 15 m), entre deux Blackmagic Mini Converter 6G (HDMI to SDI, SDI to HDMI) |
 | Salle | 24'-5" × 39'-10", plafond 19'-8" |
 

@@ -141,7 +141,7 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
   <div>
     <div class="eyebrow">Fiche de construction · Vincent Fillion, Filliformes</div>
     <h1>Kamouropsie</h1>
-    <p class="lede">Un mur d'exposition qui sonne. Trois transducteurs font vibrer le gypse côté technique, pendant qu'une projection circulaire occupe la face publique.</p>
+    <p class="lede">Un mur d'exposition qui sonne. Trois transducteurs font vibrer le gypse côté technique, pendant qu'une projection circulaire occupe la face publique. Une caméra NDI placée à côté du mur capte la salle et transforme l'image en temps réel.</p>
   </div>
 </header>
 <div class="specs">
@@ -151,6 +151,7 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
   <span class="spec">Projection Ø 96 po</span>
   <span class="spec">BST-1 + 2 exciteurs 2 po</span>
   <span class="spec">LG BU50NST à 228 po</span>
+  <span class="spec">Caméra NDI iPhone X</span>
   <span class="spec">Grande salle 24'-5" × 39'-10", plafond 19'-8"</span>
 </div>
 
@@ -189,7 +190,7 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
     <div data-k="A" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">A</span>Bass shaker BST-1</dt><dd>Sur plaque 24 × 10 po vissée dans 2 montants. Centre à 72 po du bord, 28 po du sol.</dd></div>
     <div data-k="BL" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">B</span>Exciteur gauche (public)</dt><dd>Au milieu d'une travée, 54 po du sol. Vu de dos, il est à droite.</dd></div>
     <div data-k="BR" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">B</span>Exciteur droit (public)</dt><dd>Au milieu d'une travée, 60 po du sol. Vu de dos, il est à gauche.</dd></div>
-    <div data-k="CF" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">C-F</span>Tablette Mac + ampli</dt><dd>Dosseret vissé dans 2 montants, dessus à 36 po du sol. Barre d'alimentation et bloc 15 V de l'ampli dessous.</dd></div>
+    <div data-k="CF" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">C-F</span>Tablette Mac + ampli</dt><dd>Dosseret vissé dans 2 montants, dessus à 36 po du sol. Barre d'alimentation (5 appareils) et bloc 15 V de l'ampli dessous.</dd></div>
   </dl>
   <dl class="legend">
     <div data-k="P" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">P</span>Projecteur LG BU50NST</dt><dd>Lentille à 228 po (19 pi) de la face publique, à 96 po du sol, centrée sur le cercle.</dd></div>
@@ -200,6 +201,10 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
     <div data-k="SL" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">S</span>Ligne SDI (en bleu)</dt><dd>3 câbles de 15 m et 2 coupleurs. Elle longe le pied du mur côté technique jusqu'au coin de la salle à droite de l'œuvre (vu du public), monte dans le coin, traverse le plafond jusqu'à l'ancrage du câble d'acier de ce côté et descend le long de ce câble jusqu'au projecteur. Trajet d'environ 23 m : il reste environ 20 m, enroulés au sol derrière le mur avec le premier coupleur. Le second coupleur tombe dans le coin, vers 6 pi du sol.</dd></div>
     <div data-k="S2" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">S</span>Convertisseur SDI → HDMI</dt><dd>Blackmagic Mini Converter 6G, fixé sur le kit d'accrochage. HDMI 2 pi vers le projecteur. Bloc 12 V sur la rallonge.</dd></div>
     <div data-k="R" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">R</span>Rallonge du projecteur (en orange)</dt><dd>Environ 40 pi, avec 2 prises au bout, fixées sur le kit : une pour le projecteur, une pour le bloc 12 V du convertisseur SDI → HDMI. Elle part des prises à 9 pi du sol, sur le flanc de la colonne murale côté fenêtres (côté rangement de la colonne), monte au plafond et rejoint le projecteur par un câble d'acier. Les mêmes prises existent sur la colonne d'en face, côté porte de l'escalier.</dd></div>
+  </dl>
+  <dl class="legend">
+    <div data-k="NC" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">N</span>Caméra NDI (iPhone X)</dt><dd>Sur la tranche gauche du mur (vu du public), à environ 60 po du sol, tournée vers la salle. Alimentée en tout temps : câble Lightning de 2 m jusqu'à son chargeur USB sur la barre d'alimentation.</dd></div>
+    <div data-k="NR" tabindex="0" role="button" aria-pressed="false"><dt><span class="k">N</span>Routeur TP-Link AX3000</dt><dd>Crée le réseau local de l'œuvre. Vissé au mur dans le montant au-dessus de la tablette, relié au Mac par un câble Ethernet. Bloc d'alimentation sur la barre d'alimentation.</dd></div>
   </dl>
   <p class="note">Distances, réglages et points à surveiller pour le projecteur : voir l'onglet Projection.</p>
   <p class="note">Gauche et droite sont toujours nommées du point de vue du public. Le canal gauche de l'ampli va donc à l'exciteur qui se trouve à droite quand on travaille derrière le mur.</p>
@@ -291,6 +296,15 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
     <li>Palinopsia en plein écran sur la sortie HDMI, en 3840 × 2160 à 30 i/s (2160p30) : c'est le maximum du 6G-SDI, et la résolution native du projecteur. À 60 i/s, il faut descendre en 1080p.</li>
   </ul>
 
+  <h3>Caméra NDI (interaction)</h3>
+  <ul class="plain">
+    <li>L'œuvre est interactive : un vieil iPhone X sert de caméra NDI. Son image entre dans Palinopsia et modifie la composition vidéo en temps réel.</li>
+    <li>L'iPhone est placé sur la tranche gauche du mur (vu du public), à environ 60 po du sol, et regarde la salle. Côté et hauteur à ajuster sur place avec l'artiste.</li>
+    <li>Le routeur TP-Link AX3000, derrière le mur, crée un réseau local. L'iPhone s'y connecte en Wi-Fi, le Mac par un câble Ethernet.</li>
+    <li>L'iPhone doit être branché en tout temps : câble Lightning de 2 m, contourné par la tranche du mur jusqu'au chargeur USB sur la barre d'alimentation.</li>
+    <li>Sur l'iPhone : verrouillage automatique à « Jamais », application NDI au premier plan (Accès guidé), mode avion avec Wi-Fi seul.</li>
+  </ul>
+
   <h3>À surveiller</h3>
   <ul class="plain">
     <li><strong>Ombres du public.</strong> Le bas du faisceau passe à environ 25 po du sol à 5 pi du mur, et à 50 po à 10 pi. Une personne qui se tient devant le mur coupe donc la moitié basse du cercle. À 10 pi, l'ombre d'une personne de 5 pi 6 po couvre environ le tiers inférieur du cercle.</li>
@@ -306,16 +320,20 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
   <table>
     <thead><tr><th>Élément</th><th>Qté</th><th>Rôle</th><th>Emplacement</th><th>Notes</th></tr></thead>
     <tbody>
-      <tr><td><strong>Mac Mini M2 (2023)</strong></td><td class="num">1</td><td>Fait jouer Palinopsia (image) et le son.</td><td>Sur la tablette C, derrière le mur.</td><td>Sortie casque 3,5 mm vers l'ampli, HDMI vers le convertisseur HDMI → SDI. Alimentation intégrée : un seul cordon secteur.</td></tr>
+      <tr><td><strong>Mac Mini M2 (2023)</strong></td><td class="num">1</td><td>Fait jouer Palinopsia (image) et le son.</td><td>Sur la tablette C, derrière le mur.</td><td>Sortie casque 3,5 mm vers l'ampli, HDMI vers le convertisseur HDMI → SDI, Ethernet vers le routeur. Alimentation intégrée : un seul cordon secteur.</td></tr>
       <tr><td><strong>Amplificateur 3 canaux 30 W</strong></td><td class="num">1</td><td>Alimente les trois transducteurs.</td><td>Sur la tablette C, à côté du Mac.</td><td>Avec son bloc 15 V 4 A, fixé sous la tablette. Gauche → exciteur gauche (public), droite → exciteur droit, basse → BST-1.</td></tr>
       <tr><td><strong>Projecteur LG BU50NST</strong></td><td class="num">1</td><td>Projection circulaire Ø 96 po.</td><td>Suspendu au centre de la salle, lentille à 228 po du mur et à 96 po du sol.</td><td>Détails dans l'onglet Projection.</td></tr>
       <tr><td><strong>Yosoo Health Gear Resonance Speaker 2 po, 25 W</strong></td><td class="num">2</td><td>Son stéréo : font vibrer le gypse comme une membrane.</td><td>Au milieu des travées, à 54 et 60 po du sol, sur les rondelles B.</td><td>Collés au VHB, avec cordelette de sécurité.</td></tr>
       <tr><td><strong>Dayton Audio BST-1 (bass shaker)</strong></td><td class="num">1</td><td>Basses : fait vibrer toute la structure du mur.</td><td>Sur la plaque A, à 28 po du sol.</td><td>4 Ω, 50 W. Vissé directement, sans caoutchouc.</td></tr>
-      <tr><td><strong>Barre d'alimentation</strong></td><td class="num">1</td><td>Alimente le Mac, l'ampli et le convertisseur HDMI → SDI.</td><td>Vissée sur le dosseret F, sous la tablette.</td><td>Branchée à la prise au sol du mur de rangement, environ 5 pi derrière.</td></tr>
+      <tr><td><strong>Barre d'alimentation</strong></td><td class="num">1</td><td>Alimente le Mac, l'ampli, le convertisseur HDMI → SDI, le routeur et l'iPhone.</td><td>Vissée sur le dosseret F, sous la tablette.</td><td>Au moins 5 prises. Branchée à la prise au sol du mur de rangement, environ 5 pi derrière.</td></tr>
       <tr><td><strong>Blackmagic Mini Converter HDMI to SDI 6G</strong></td><td class="num">1</td><td>Envoie l'image du Mac sur la ligne SDI.</td><td>Sur la tablette C, à côté du Mac.</td><td>Relié au Mac par un câble HDMI de 2 pi. Bloc 12 V branché sur la barre d'alimentation.</td></tr>
       <tr><td><strong>Blackmagic Mini Converter SDI to HDMI 6G</strong></td><td class="num">1</td><td>Ramène le signal en HDMI pour le projecteur.</td><td>Attaché au kit d'accrochage du projecteur.</td><td>Relié au projecteur par un câble HDMI de 2 pi. Bloc 12 V branché sur la rallonge du projecteur.</td></tr>
       <tr><td><strong>Câbles HDMI 2 pi</strong></td><td class="num">2</td><td>Mac → convertisseur, convertisseur → projecteur.</td><td>Aux deux bouts de la ligne SDI.</td><td></td></tr>
       <tr><td><strong>Câbles SDI 15 m</strong></td><td class="num">3</td><td>Ligne vidéo de 45 m entre les deux convertisseurs.</td><td>Du mur au projecteur, par le coin de la salle et le plafond.</td><td>Trajet d'environ 23 m. Surplus enroulé derrière le mur.</td></tr>
+      <tr><td><strong>iPhone X (caméra NDI)</strong></td><td class="num">1</td><td>Filme la salle; son image modifie la vidéo en temps réel.</td><td>Sur la tranche gauche du mur (vu du public), environ 60 po du sol.</td><td>Toujours branché. Envoie son image en Wi-Fi au routeur.</td></tr>
+      <tr><td><strong>Chargeur USB et câble Lightning 2 m</strong></td><td class="num">1</td><td>Alimente l'iPhone en tout temps.</td><td>Chargeur sur la barre d'alimentation.</td><td>Le câble contourne la tranche du mur.</td></tr>
+      <tr><td><strong>Routeur TP-Link AX3000</strong></td><td class="num">1</td><td>Réseau local entre l'iPhone et le Mac.</td><td>Vissé au mur au-dessus de la tablette C, côté technique.</td><td>Bloc d'alimentation sur la barre d'alimentation.</td></tr>
+      <tr><td><strong>Câble Ethernet court</strong></td><td class="num">1</td><td>Mac → routeur.</td><td>Sur la tablette C.</td><td></td></tr>
       <tr><td><strong>Coupleurs SDI femelle-femelle</strong></td><td class="num">2</td><td>Relient les trois câbles SDI.</td><td>Sur la ligne SDI.</td><td>À fixer pour qu'ils ne tirent pas sur les connecteurs.</td></tr>
       </tbody>
   </table>
@@ -371,6 +389,8 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
         <li><input type="checkbox" id="s17"><label for="s17"><span class="q">1 ×</span> tapis antidérapant en caoutchouc, coupé à 8 × 20 po<small>Isole le Mac des vibrations du mur</small></label></li>
         <li><input type="checkbox" id="s28"><label for="s28"><span class="q">2 ×</span> vis #6 × 5/8 po, tête ronde<small>Fixation de la barre d'alimentation</small></label></li>
         <li><input type="checkbox" id="s29"><label for="s29">Velcro industriel adhésif<small>Bloc 15 V sous la tablette</small></label></li>
+        <li><input type="checkbox" id="s31"><label for="s31"><span class="q">2 ×</span> vis #8 × 1-1/4 po, tête cylindrique<small>Routeur, par ses trous de fixation murale, dans le montant au-dessus de la tablette</small></label></li>
+        <li><input type="checkbox" id="s32"><label for="s32"><span class="q">1 ×</span> support de téléphone à pince ou bras articulé<small>iPhone sur la tranche gauche du mur. À confirmer avec l'artiste.</small></label></li>
         <li><input type="checkbox" id="s30"><label for="s30"><span class="q">1 ×</span> passe-câble Ø 1-1/2 po<small>Trou de la tablette C</small></label></li>
       </ul>
       <h3>Projection</h3>
@@ -403,6 +423,7 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
     <li>Projecteur : poser les 4 ancrages au plafond, à 30 po de part et d'autre de l'axe, centrés à 234 po du mur. Monter le kit sur le projecteur, passer les deux câbles en X, ajuster la hauteur pour que la lentille soit à 96 po du sol, puis ajouter le câble de sécurité.</li>
     <li>Régler le zoom, le décalage vertical et la mise au point pour que le cercle tombe exactement sur le mur. Faire le masque circulaire dans Palinopsia plutôt qu'avec la correction trapézoïdale.</li>
     <li>Signal vidéo : Mac → HDMI → convertisseur HDMI → SDI sur la tablette, puis la ligne SDI (3 câbles et 2 coupleurs) : pied du mur, coin de la salle à droite de l'œuvre, plafond, puis le long du câble d'acier de ce côté jusqu'au projecteur. Commencer par le projecteur et enrouler le surplus derrière le mur. Au bout, convertisseur SDI → HDMI → projecteur. Brancher la rallonge du projecteur sur les prises à 9 pi de la colonne murale côté fenêtres, la monter au plafond jusqu'au kit et fixer ses 2 prises sur le kit : projecteur et bloc 12 V du convertisseur. Brancher le bloc 12 V du convertisseur HDMI → SDI sur la barre d'alimentation. Fixer les coupleurs.</li>
+    <li>Caméra NDI : visser le routeur dans le montant au-dessus de la tablette, le brancher au Mac (Ethernet) et à la barre d'alimentation. Poser l'iPhone sur la tranche gauche du mur, face à la salle, et passer son câble Lightning par la tranche jusqu'au chargeur sur la barre.</li>
     <li>Câbler en fixant les fils tous les 12 po environ, pour éviter qu'ils claquent contre le gypse.</li>
     <li>Tester avec un balayage sinusoïdal lent de 20 Hz à 2 kHz et resserrer ce qui cliquette.</li>
   </ol>
@@ -503,13 +524,13 @@ box(20,1,0.75,ply,-48,37.25,-9.875);
 box(7.75,1.4,7.75,0xC8C8C8,-52,37.45,-6.2);
 box(3.2,0.8,2.2,0x3B6D11,-43.5,37.15,-5);
 box(10.5,1.6,2,0xF2F2EE,-48,32.5,-4);
-[-51.5,-49.5,-47.5,-45.5].forEach(x=>box(0.9,0.6,0.15,0x3d3d3a,x,32.5,-5.05));
-box(0.8,0.6,0.15,0xD85A30,-43.6,32.5,-5.05);
+[-52.2,-50.6,-49,-47.4,-45.8,-44.2].forEach(x=>box(0.9,0.6,0.15,0x3d3d3a,x,32.5,-5.05));
+box(0.6,0.6,0.15,0xD85A30,-43.1,32.5,-5.05);
 box(4,1.3,2.2,0x2C2C2A,-48,35.3,-7.6);
 cyl(0.75,0.2,0x2C2C2A,-48,36.4,-4.25).rotation.x=0;
 tube([[-47.5,32.5,-5.1],[-47.8,34.5,-4.6],[-48,37.2,-4.3],[-50,37.5,-5.5]]);
 tube([[-46,35.3,-7.6],[-46.5,34.8,-5.2],[-47.6,35.8,-4.3],[-46.5,37.3,-4.1],[-44.5,37.2,-4.3]]);
-tube([[-50,35.3,-7.6],[-50.5,33.8,-6.2],[-49.5,32.5,-5.1]]);
+tube([[-50,35.3,-7.6],[-50.5,33.8,-6.2],[-49,32.5,-5.1]]);
 function tube(pts){const cu=new THREE.CatmullRomCurve3(pts.map(p=>new THREE.Vector3(p[0],p[1],p[2])),false,'catmullrom',0.1);const m=new THREE.Mesh(new THREE.TubeGeometry(cu,60,0.18,6,false),mat(dark));m.userData.cable=1;glow(m,cu,60);S.add(m);}
 TAG='BL';tube([[-43.5,37.5,-6.1],[-40,42,-3.3],[-36,48,-3.2],[-32,52.8,-4.8]]);
 TAG='BR';tube([[-43.5,37.5,-6.1],[-30,42,-3.3],[10,52,-3.2],[32,58.8,-4.8]]);
@@ -559,7 +580,7 @@ const BMD=0x4A5260,SDI=0x2F6FB0,PWR=0xD85A30;
 // S : convertisseur HDMI -> SDI sur la tablette, bloc 12 V sous la tablette
 TAG='S1';box(4.3,1,3.2,BMD,-43.5,37.25,-7.85);
 box(2.4,1.1,1.8,0x2C2C2A,-52,35.35,-7.6);
-tube([[-52,35,-7.6],[-52.4,33.8,-6.2],[-51.5,32.5,-5.1]]);
+tube([[-52,35,-7.6],[-51.8,33.8,-6.2],[-50.6,32.5,-5.1]]);
 line([[-50.8,35.4,-7.4],[-49,35.8,-5],[-48.2,36.8,-4.3],[-48.4,37.6,-4.6],[-46,37.5,-7.4],[-45.65,37.3,-7.6]],dark,0.1);
 line([[-48.1,37.6,-7.6],[-46.9,38.1,-7.9],[-45.65,37.4,-8.1]],dark,0.16);
 // Ligne SDI : rebord, surplus enroulé au sol, pied du mur, coin de la salle (droite vu du public), plafond, câble d'acier, projecteur
@@ -581,6 +602,21 @@ line([[-3,101.75,PC+1.8],[-4.6,100.8,PC+4.6],[-4.4,98.4,PC+6.6]],dark,0.16);
 const OZ=164.6,OX=-(RW/2-3);
 [-1,1].forEach(sx=>{box(2.2,4.4,0.5,0xF2F2EE,sx*(RW/2-3),108,OZ+0.1);[106.9,109.1].forEach(y=>box(0.9,0.6,0.15,0x3d3d3a,sx*(RW/2-3),y,OZ-0.2));});
 line([[OX,106.9,OZ-0.3],[OX+0.5,108,OZ-1.4],[OX+3.8,110,OZ-1.4],[OX+3.8,233.4,OZ-1.4],[OX+6,233.4,OZ+2],[-28.6,233.4,PC-31],[-28,233.2,PC-29.4],[-1.6,104.4,PC-0.2],[-3,101.9,PC+2.6]],PWR,0.14);TAG=null;
+// N : routeur au mur au-dessus de la tablette, caméra NDI (iPhone) sur la tranche gauche du mur vu du public
+const NET=0x7A4FB0;
+TAG='NR';box(10.2,5.3,1.4,0x2C2C2A,-56,46.5,-2.95);
+[-60,-57.5,-54.5,-52].forEach(x=>box(0.5,6,0.3,0x2C2C2A,x,52.2,-3.2));
+box(1.6,2,1.4,0x2C2C2A,-52.2,32.5,-5.85).userData.cable=1;
+line([[-52.2,33.5,-6],[-55,34,-4.6],[-58.6,36,-3],[-58.6,43,-2.7],[-58,44,-2.95]],dark,0.1);
+line([[-50,37.6,-2.5],[-51,40.5,-2.5],[-52,43.9,-2.9]],NET,0.12);
+TAG='NC';box(1.2,1.6,1.2,0xF2F2EE,-45.8,32.5,-5.7).userData.cable=1;
+line([[-45.8,31.7,-5.8],[-47,30,-6],[-60,29.5,-3],[-71.5,30,-2.7],[-72.8,40,-2.6],[-73.4,52,0],[-74,56.5,1.5],[-75.6,57.1,3.3]],0xEDEDED,0.1);
+box(3,0.6,0.6,0x5F5E5A,-73.5,57.5,1.5);
+box(2.79,5.65,0.3,0x1E1E1E,-76.2,60,3.4);
+cyl(0.35,0.12,0x111111,-77,62.2,3.6);
+TAG=null;
+const camL=new THREE.Vector3(-77,62.2,3.7),cc=[[-47-42,5],[-47+42,5],[-47+42,119],[-47-42,119]].map(c=>new THREE.Vector3(c[0],c[1],93.6));
+S.add(new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(cc.flatMap(c=>[camL,c])),new THREE.LineBasicMaterial({color:NET,transparent:true,opacity:0.35})));
 const L=[
  ['B','Exciteur gauche (public), h 54 po',[-32,59,-7],'b','BL'],
  ['B','Exciteur droit (public), h 60 po',[32,65,-7],'b','BR'],
@@ -591,6 +627,8 @@ const L=[
  ['P','LG BU50NST, lentille à 228 po, h 96 po',[0,91,PC],'a','P'],
  ['P','Câbles d’acier en X',[0,170,PC],'a','PS'],
  ['S','Convertisseur HDMI → SDI',[-43.5,49,-8],'b','S1'],
+ ['N','Routeur TP-Link AX3000',[-56,59,-4],'b','NR'],
+ ['N','Caméra NDI (iPhone X), h 60 po',[-77,67,4],'a','NC'],
  ['S','Surplus SDI enroulé, coupleur 1',[-20,4,-30],'b','SL'],
  ['S','Ligne SDI dans le coin, coupleur 2 à 6 pi',[144,150,RZ0+1],'a','SL'],
  ['R','Prises à 9 pi du sol (départ de la rallonge)',[OX+4,116,OZ-2],'a','R'],
@@ -631,7 +669,7 @@ cv.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-px,dy=e
 const up=()=>{drag=false;cv.style.cursor='grab';};
 cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',up);
 cv.addEventListener('wheel',e=>{e.preventDefault();zoom(e.deltaY>0?1.08:0.93);},{passive:false});
-const DIR={A:[Math.PI+0.45,0.25],BL:[Math.PI+0.45,0.25],BR:[Math.PI-0.45,0.25],CF:[Math.PI+0.5,0.3],S1:[Math.PI+0.5,0.3],P:[Math.PI/2+0.75,0.18],PS:[Math.PI/2+0.75,0.32],S2:[Math.PI/2+0.9,0.35],SL:[-0.75,0.38],R:[0.95,0.32]};
+const DIR={A:[Math.PI+0.45,0.25],BL:[Math.PI+0.45,0.25],BR:[Math.PI-0.45,0.25],CF:[Math.PI+0.5,0.3],S1:[Math.PI+0.5,0.3],P:[Math.PI/2+0.75,0.18],PS:[Math.PI/2+0.75,0.32],S2:[Math.PI/2+0.9,0.35],NC:[-0.55,0.2],NR:[Math.PI+0.35,0.2],SL:[-0.75,0.38],R:[0.95,0.32]};
 const HI=new THREE.Color(0xFFC531);let sel=null,tw=null;
 const legs=[...document.querySelectorAll('.legend [data-k]')];
 function mark(k,on){(G[k]||[]).forEach(m=>{if(m.userData.glow)m.userData.glow.visible=on&&(k==='SL'||k==='R');m.material.emissive.set(on?HI:0x000000);m.material.emissiveIntensity=on?0.6:1;});}
