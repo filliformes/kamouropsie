@@ -11,7 +11,7 @@
 ### *Kamouropsie*
 
 **Vincent Fillion**  
-Installation audiovisuelle générative, 2026  
+Installation générative interactive, 2026  
 <sub>Projection vidéo, caméra temps réel, transducteurs sonores, conception logicielle sur mesure.</sub>
 
 ---
