@@ -12,7 +12,7 @@
 
 **Vincent Fillion**  
 Installation audiovisuelle générative, 2026  
-<sub>Projection vidéo, conception logicielle sur mesure, transducteurs sonores.</sub>
+<sub>Projection vidéo, caméra temps réel, transducteurs sonores, conception logicielle sur mesure.</sub>
 
 ---
 
